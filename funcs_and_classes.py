@@ -180,12 +180,14 @@ class Files:
         return datetime.datetime.strptime(time.ctime(os.path.getmtime(self.path + '/' + self.name)),
                                           "%a %b %d %H:%M:%S %Y")
 
-    def m_time_check(self):  # Проверка на подходящее время изменения файла
+    def m_time_check(self, autocopy_time_check=PAUSE_TIME_INT, autocopy_delta_time=DELTA_CHECK_INT):  # Проверка на подходящее время изменения файла
         today = datetime.datetime.today()
         delta = (today - self.file_mtime())
-        delta_check = datetime.timedelta(seconds=DELTA_CHECK_INT)
-        pause_time = datetime.timedelta(seconds=PAUSE_TIME_INT)
 
+        delta_check = datetime.timedelta(seconds=autocopy_delta_time)
+        pause_time = datetime.timedelta(seconds=autocopy_time_check)
+        print(autocopy_time_check)
+        print(autocopy_delta_time)
         if (delta < delta_check) and (delta > pause_time):
             print('Недавние файлы: '+self.name)
             return True

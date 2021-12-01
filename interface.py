@@ -18,9 +18,10 @@ users_list = users.split(' ')
 
 # Задаем значения по умолчанию
 
-space_limit = int('72')
-autocopy_time_check = int('30')
-days_old = int('14')
+space_limit = 72
+autocopy_pause_time_check = 70
+autocopy_delta_time = 10000
+days_old = 14
 
 autocopy_running = False
 free_space_running = False
@@ -94,12 +95,12 @@ def add_profile():
 def save_values():
     global active_user
     global space_limit
-    global autocopy_time_check
+    global autocopy_pause_time_check
 
     options = configparser.ConfigParser()
     options['SPACE_LIMIT'] = {'space_limit': space_limit}
     options['DAYS_OLD'] = {'days_old': days_old}
-    options['AUTOCOPY'] = {'autocopy_time_check': autocopy_time_check}
+    options['AUTOCOPY'] = {'autocopy_pause_time_check': autocopy_pause_time_check, 'autocopy_delta_time': autocopy_delta_time}
 
     with open(os.path.join('profiles', active_user + '.ini'), 'w') as configfile:
         options.write(configfile)
@@ -128,7 +129,8 @@ def load_profile():
         global active_user
         global space_limit
         global days_old
-        global autocopy_time_check
+        global autocopy_pause_time_check
+        global autocopy_delta_time
 
         active_user = selected_item
         active_profile_name_lbl.configure(text=active_user, width=20, bg='lightgrey', activebackground='green')
@@ -142,16 +144,23 @@ def load_profile():
         except:
             days_old = days_old
         try:
-            autocopy_time_check = config['AUTOCOPY']['autocopy_time_check']
+            autocopy_pause_time_check = config['AUTOCOPY']['autocopy_pause_time_check']
         except:
-            autocopy_time_check = autocopy_time_check
+            autocopy_pause_time_check = autocopy_pause_time_check
+        try:
+            autocopy_delta_time = config['AUTOCOPY']['autocopy_delta_time']
+        except:
+            autocopy_delta_time = autocopy_delta_time
         load_profile_window.destroy()
 
 
 def open_autocopy_settings():
 
     check_time = StringVar()
-    check_time.set(autocopy_time_check)
+    check_time.set(autocopy_pause_time_check)
+
+    delta_time = IntVar()
+    delta_time.set(autocopy_delta_time)
 
     autocopy_settings_window = Toplevel(gui)
     autocopy_settings_window.title('Настройки автокопирования')
@@ -167,18 +176,29 @@ def open_autocopy_settings():
     time_check_setting = Entry(autocopy_settings_window, textvariable=check_time)
     time_check_setting.pack(sid='top', padx=10)
 
+    set_delta_time_label_name = Label(autocopy_settings_window, text='Насколько старые файлы будем копировать')
+    set_delta_time_label_name.pack(sid='top', padx=10, pady=20)
+
+    delta_time_setting = Entry(autocopy_settings_window, textvariable=delta_time)
+    delta_time_setting.pack(sid='top', padx=10)
+
     btn_set_check_time = Button(autocopy_settings_window, height=1, width=10, text="Установить",
-                                command=lambda: set_check_time(check_time.get()))
+                                command=lambda: set_autocopy_settings(check_time.get(), delta_time.get()))
     btn_set_check_time.pack(sid='top', pady=10, padx=10)
 
-    def set_check_time(time_value):
-        global autocopy_time_check
+    def set_autocopy_settings(time_value, delta_time):
+        global autocopy_pause_time_check
+        global autocopy_delta_time
 
         time_check_setting.delete(0, "end")
         time_check_setting.insert(0, time_value)
         check_time.set(time_value)
 
-        autocopy_time_check = time_value
+        delta_time_setting.delete(0, "end")
+        delta_time_setting.insert(0, delta_time)
+
+        autocopy_pause_time_check = time_value
+        autocopy_delta_time = delta_time
         autocopy_settings_window.destroy()
 
 
@@ -265,7 +285,7 @@ def autocopy_starter():
                     for j in i[2]:
                         if j.endswith('mp4'):
                             file = Files(j, i[0])
-                            if file.m_time_check():
+                            if file.m_time_check(autocopy_pause_time_check, autocopy_delta_time):
                                 if file.black_list_check():
                                     if file.file_exist_check(destination):
                                         if file.file_stopped_check(i[0], j):
