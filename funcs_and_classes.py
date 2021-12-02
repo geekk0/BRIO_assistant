@@ -180,26 +180,26 @@ class Files:
         return datetime.datetime.strptime(time.ctime(os.path.getmtime(self.path + '/' + self.name)),
                                           "%a %b %d %H:%M:%S %Y")
 
-    def m_time_check(self, autocopy_time_check=PAUSE_TIME_INT, autocopy_delta_time=DELTA_CHECK_INT):  # Проверка на подходящее время изменения файла
+    def m_time_check(self, autocopy_pause_time_check=PAUSE_TIME_INT, autocopy_delta_time=DELTA_CHECK_INT):  # Проверка на подходящее время изменения файла
         today = datetime.datetime.today()
         delta = (today - self.file_mtime())
 
         delta_check = datetime.timedelta(seconds=autocopy_delta_time)
-        pause_time = datetime.timedelta(seconds=autocopy_time_check)
-        print(autocopy_time_check)
-        print(autocopy_delta_time)
+        pause_time = datetime.timedelta(seconds=autocopy_pause_time_check)
+
         if (delta < delta_check) and (delta > pause_time):
             print('Недавние файлы: '+self.name)
             return True
 
-    def black_list_check(self):
+    def black_list_check(self, black_list_lifetime):
 
         match = False
         tmp_black_list = black_list.copy()
+        print('blacklist_check: '+str(black_list))
 
         for key in tmp_black_list.keys():
             black_list_add_time = datetime.datetime.strptime(key, '%Y-%m-%d %H:%M:%S')
-            delta = datetime.timedelta(seconds=BLACK_LIST_DELTA_INT)
+            delta = datetime.timedelta(seconds=black_list_lifetime)
             if (datetime.datetime.now() - black_list_add_time) > delta:
                 del black_list[key]
             item = black_list.get(key)
@@ -214,20 +214,23 @@ class Files:
             print(self.name + ' в черном листе')
             return False
 
-    def rec_name_folder(self, destination):
+    def rec_name_folder(self, destination, filters_peregony, filters_efir, filters_studia):
         match = False
-
-        for x in PEREGONY:
+        print(filters_peregony)
+        for x in filters_peregony:
             if x in self.name.upper():
                 match = True
+                print('match')
                 return os.path.join(os.path.abspath(destination), r'ИСХОДНИКИ ПЕРЕГОНЫ')
+            else:
+                print('no match')
         if not match:
-            for y in NOVOSTI:
+            for y in filters_efir:
                 if y in self.name.upper():
                     match = True
                     return os.path.join(os.path.abspath(destination), r'ИСХОДНИКИ ЗАПИСЬ ЭФИРА')
         if not match:
-            for z in STUDIA:
+            for z in filters_studia:
                 if z in self.name.upper():
                     match = True
                     return os.path.join(os.path.abspath(destination), r'ИСХОДНИКИ ЗАПИСИ СТУДИЙ')
@@ -271,9 +274,9 @@ class Files:
         str_folder_date = str(today)
         return str_folder_date[8] + str_folder_date[9]  # Формируем имя папки под число
 
-    def file_exist_check(self, destination):
+    def file_exist_check(self, destination, filters_peregony, filters_efir, filters_studia):
         try:
-            full_path = os.path.join(self.rec_name_folder(destination), self.rec_month_folder(), self.rec_date_folder())
+            full_path = os.path.join(self.rec_name_folder(destination, filters_peregony, filters_efir, filters_studia ), self.rec_month_folder(), self.rec_date_folder())
         except:
             full_path = None
         if full_path:

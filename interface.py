@@ -16,12 +16,19 @@ config.read('config.ini')
 users = config['PROFILES']['users']    # Список профилей
 users_list = users.split(' ')
 
-# Задаем значения по умолчанию
+# Задаем значения по умолчанию для свободного места
 
 space_limit = 72
 autocopy_pause_time_check = 70
 autocopy_delta_time = 10000
 days_old = 14
+
+# Задаем значения по умолчанию для автокопирования
+
+black_list_lifetime = BLACK_LIST_DELTA_INT
+filters_peregony = PEREGONY
+filters_efir = NOVOSTI
+filters_studia = STUDIA
 
 autocopy_running = False
 free_space_running = False
@@ -96,11 +103,19 @@ def save_values():
     global active_user
     global space_limit
     global autocopy_pause_time_check
+    global filters_peregony
+    global filters_efir
+    global filters_studia
+    global black_list_lifetime
 
     options = configparser.ConfigParser()
     options['SPACE_LIMIT'] = {'space_limit': space_limit}
     options['DAYS_OLD'] = {'days_old': days_old}
-    options['AUTOCOPY'] = {'autocopy_pause_time_check': autocopy_pause_time_check, 'autocopy_delta_time': autocopy_delta_time}
+    options['AUTOCOPY'] = {'autocopy_pause_time_check': autocopy_pause_time_check,
+                           'autocopy_delta_time': autocopy_delta_time, 'filters_peregony': filters_peregony,
+                           'filters_efir': filters_efir, 'filters_studia': filters_studia,
+                           'black_list_lifetime': black_list_lifetime}
+
 
     with open(os.path.join('profiles', active_user + '.ini'), 'w') as configfile:
         options.write(configfile)
@@ -131,6 +146,10 @@ def load_profile():
         global days_old
         global autocopy_pause_time_check
         global autocopy_delta_time
+        global filters_peregony
+        global filters_efir
+        global filters_studia
+        global black_list_lifetime
 
         active_user = selected_item
         active_profile_name_lbl.configure(text=active_user, width=20, bg='lightgrey', activebackground='green')
@@ -144,51 +163,94 @@ def load_profile():
         except:
             days_old = days_old
         try:
-            autocopy_pause_time_check = config['AUTOCOPY']['autocopy_pause_time_check']
+            autocopy_pause_time_check = int(config['AUTOCOPY']['autocopy_pause_time_check'])
         except:
             autocopy_pause_time_check = autocopy_pause_time_check
         try:
-            autocopy_delta_time = config['AUTOCOPY']['autocopy_delta_time']
+            autocopy_delta_time = int(config['AUTOCOPY']['autocopy_delta_time'])
         except:
             autocopy_delta_time = autocopy_delta_time
+        try:
+            filters_peregony = eval(config['AUTOCOPY']['filters_peregony'])
+        except:
+            filters_peregony = filters_peregony
+        try:
+            filters_efir = eval(config['AUTOCOPY']['filters_efir'])
+        except:
+            filters_efir = filters_efir
+        try:
+            filters_studia = eval(config['AUTOCOPY']['filters_studia'])
+        except:
+            filters_studia = filters_efir
+        try:
+            black_list_lifetime = int(config['AUTOCOPY']['black_list_lifetime'])
+        except:
+            black_list_lifetime = BLACK_LIST_DELTA_INT
         load_profile_window.destroy()
 
 
 def open_autocopy_settings():
 
-    check_time = StringVar()
+    check_time = IntVar()
     check_time.set(autocopy_pause_time_check)
 
     delta_time = IntVar()
     delta_time.set(autocopy_delta_time)
 
+    black_list_time = IntVar()
+    black_list_time.set(black_list_lifetime)
+
     autocopy_settings_window = Toplevel(gui)
     autocopy_settings_window.title('Настройки автокопирования')
-    autocopy_settings_window.geometry('600x400+450+200')
+    autocopy_settings_window.geometry('600x500+450+200')
     autocopy_settings_window.resizable(width=FALSE, height=FALSE)
     autocopy_settings_window.configure(bg='darkgrey')
     autocopy_settings_window.focus()
 
     set_check_time_label_name = Label(autocopy_settings_window, text='Через сколько секунд после остановки записи '
-                                                                     'файл начинает копироваться ')
+                                                                     'файл начинает копироваться: ')   # Rename time
     set_check_time_label_name.pack(sid='top', padx=10, pady=10)
 
     time_check_setting = Entry(autocopy_settings_window, textvariable=check_time)
     time_check_setting.pack(sid='top', padx=10)
 
-    set_delta_time_label_name = Label(autocopy_settings_window, text='Насколько старые файлы будем копировать')
+    set_delta_time_label_name = Label(autocopy_settings_window, text='Насколько старые файлы будем копировать:')  # Delta
     set_delta_time_label_name.pack(sid='top', padx=10, pady=20)
 
     delta_time_setting = Entry(autocopy_settings_window, textvariable=delta_time)
     delta_time_setting.pack(sid='top', padx=10)
 
-    btn_set_check_time = Button(autocopy_settings_window, height=1, width=10, text="Установить",
-                                command=lambda: set_autocopy_settings(check_time.get(), delta_time.get()))
-    btn_set_check_time.pack(sid='top', pady=10, padx=10)
+    set_black_list_time_label = Label(autocopy_settings_window,
+                                      text='При отмене копирования файла, через сколько попытка возобновится:')  # Delta
+    set_black_list_time_label.pack(sid='top', padx=10, pady=20)
 
-    def set_autocopy_settings(time_value, delta_time):
+    black_list_time_setting = Entry(autocopy_settings_window, textvariable=black_list_time)
+    black_list_time_setting.pack(sid='top', padx=10)
+
+    btn_set_values = Button(autocopy_settings_window, height=1, width=20, text="Установить значения",
+                            command=lambda: set_autocopy_settings(check_time.get(), delta_time.get(),
+                                                                  black_list_time.get()))
+    btn_set_values.pack(sid='top', pady=30, padx=0)
+
+    set_filters_peregony_label = Label(autocopy_settings_window, text='Настроить фильтры для копирования:')  # Filters
+    set_filters_peregony_label.pack(sid='top', padx=0, pady=20)
+
+    btn_filters_peregony = Button(autocopy_settings_window, height=1, width=15, text="ПЕРЕГОНЫ",
+                                  command=lambda: show_filters_peregony())
+    btn_filters_peregony.pack(sid='top', pady=0, padx=0)
+
+    btn_filters_efir = Button(autocopy_settings_window, height=1, width=15, text="ЗАПИСЬ ЭФИРА",
+                                  command=lambda: show_filters_efir())
+    btn_filters_efir.pack(sid='top', pady=10, padx=30)
+
+    btn_filters_studia = Button(autocopy_settings_window, height=1, width=15, text="ЗАПИСЬ СТУДИЙ",
+                                  command=lambda: show_filters_studia())
+    btn_filters_studia.pack(sid='top', pady=0, padx=60)
+
+    def set_autocopy_settings(time_value, delta_time, black_list_time):
         global autocopy_pause_time_check
         global autocopy_delta_time
+        global black_list_lifetime
 
         time_check_setting.delete(0, "end")
         time_check_setting.insert(0, time_value)
@@ -197,9 +259,149 @@ def open_autocopy_settings():
         delta_time_setting.delete(0, "end")
         delta_time_setting.insert(0, delta_time)
 
+        black_list_time_setting.delete(0, "end")
+        black_list_time_setting.insert(0, black_list_time)
+
         autocopy_pause_time_check = time_value
         autocopy_delta_time = delta_time
+        black_list_lifetime = black_list_time
+
         autocopy_settings_window.destroy()
+
+    def show_filters_peregony():
+        global active_user
+        global filters_peregony
+
+        new_filter_peregony = StringVar()
+
+        filters_peregony_window = Toplevel(autocopy_settings_window)
+        filters_peregony_window.title('Фильтры для ПЕРЕГОНЫ')
+        filters_peregony_window.geometry('550x300+475+250')
+        filters_peregony_window.resizable(width=FALSE, height=FALSE)
+        filters_peregony_window.configure(bg='darkgrey')
+        filters_peregony_window.focus()
+
+        filters_peregony_list = Listbox(filters_peregony_window, width=50, height=40)
+        filters_peregony_list.pack(sid='left', padx=20, pady=30)
+
+        config.read(os.path.join('profiles', active_user + '.ini'))
+
+        set_new_filter_peregony_label = Label(filters_peregony_window,
+                                          text='Введите новый фильтр:')  # Delta
+        set_new_filter_peregony_label.pack(sid='top', padx=10, pady=20)
+
+        new_filter_peregony_entry = Entry(filters_peregony_window, textvariable=new_filter_peregony)
+        new_filter_peregony_entry.pack(sid='top', padx=0)
+
+        add_filter_peregony_btn = Button(filters_peregony_window, text="Добавить",
+                                         command=lambda: add_filter_peregony(new_filter_peregony))
+        add_filter_peregony_btn.pack(sid="top", pady=5)
+
+        delete_filter_peregony_btn = Button(filters_peregony_window, text="Удалить выбранный фильтр",
+                                            command = lambda: delete_filter_peregony((filters_peregony_list.curselection())))
+        delete_filter_peregony_btn.pack(sid='top', pady=10)
+
+        for filter in filters_peregony:
+            filters_peregony_list.insert(END, filter)
+
+        def add_filter_peregony(new_filter_peregony):
+            global filters_peregony
+            filters_peregony_list.insert(END, new_filter_peregony.get())
+            filters_peregony.append(new_filter_peregony.get())
+
+        def delete_filter_peregony(selected_item):
+            filters_peregony.remove(filters_peregony_list.get(selected_item))
+            filters_peregony_list.delete(selected_item)
+
+    def show_filters_efir():
+        global active_user
+        global filters_efir
+
+        new_filter_efir = StringVar()
+
+        filters_efir_window = Toplevel(autocopy_settings_window)
+        filters_efir_window.title('Фильтры для ЗАПИСЬ ЭФИРА')
+        filters_efir_window.geometry('550x300+475+250')
+        filters_efir_window.resizable(width=FALSE, height=FALSE)
+        filters_efir_window.configure(bg='darkgrey')
+        filters_efir_window.focus()
+
+        filters_efir_list = Listbox(filters_efir_window, width=50, height=40)
+        filters_efir_list.pack(sid='left', padx=20, pady=30)
+
+        config.read(os.path.join('profiles', active_user + '.ini'))
+
+        set_new_filter_efir_label = Label(filters_efir_window,
+                                          text='Введите новый фильтр:')  # Delta
+        set_new_filter_efir_label.pack(sid='top', padx=10, pady=20)
+
+        new_filter_efir_entry = Entry(filters_efir_window, textvariable=new_filter_efir)
+        new_filter_efir_entry.pack(sid='top', padx=0)
+
+        add_filter_efir_btn = Button(filters_efir_window, text="Добавить",
+                                         command=lambda: add_filter_efir(new_filter_efir))
+        add_filter_efir_btn.pack(sid="top", pady=5)
+
+        delete_filter_efir_btn = Button(filters_efir_window, text="Удалить выбранный фильтр",
+                                            command = lambda: delete_filter_efir((filters_efir_list.curselection())))
+        delete_filter_efir_btn.pack(sid='top', pady=10)
+
+        for filter in filters_efir:
+            filters_efir_list.insert(END, filter)
+
+        def add_filter_efir(new_filter_efir):
+            global filters_efir
+            filters_efir_list.insert(END, new_filter_efir.get())
+            filters_efir.append(new_filter_efir.get())
+
+        def delete_filter_efir(selected_item):
+            filters_efir.remove(filters_efir_list.get(selected_item))
+            filters_efir_list.delete(selected_item)
+
+    def show_filters_studia():
+        global active_user
+        global filters_studia
+
+        new_filter_studia = StringVar()
+
+        filters_studia_window = Toplevel(autocopy_settings_window)
+        filters_studia_window.title('Фильтры для записи студий')
+        filters_studia_window.geometry('550x300+475+250')
+        filters_studia_window.resizable(width=FALSE, height=FALSE)
+        filters_studia_window.configure(bg='darkgrey')
+        filters_studia_window.focus()
+
+        filters_studia_list = Listbox(filters_studia_window, width=50, height=40)
+        filters_studia_list.pack(sid='left', padx=20, pady=30)
+
+        config.read(os.path.join('profiles', active_user + '.ini'))
+
+        set_new_filter_studia_label = Label(filters_studia_window,
+                                            text='Введите новый фильтр:')  # Delta
+        set_new_filter_studia_label.pack(sid='top', padx=10, pady=20)
+
+        new_filter_studia_entry = Entry(filters_studia_window, textvariable=new_filter_studia)
+        new_filter_studia_entry.pack(sid='top', padx=0)
+
+        add_filter_studia_btn = Button(filters_studia_window, text="Добавить",
+                                       command=lambda: add_filter_studia(new_filter_studia))
+        add_filter_studia_btn.pack(sid="top", pady=5)
+
+        delete_filter_studia_btn = Button(filters_studia_window, text="Удалить выбранный фильтр",
+                                          command=lambda: delete_filter_studia((filters_studia_list.curselection())))
+        delete_filter_studia_btn.pack(sid='top', pady=10)
+
+        for filter in filters_studia:
+            filters_studia_list.insert(END, filter)
+
+        def add_filter_studia(new_filter_studia):
+            global filters_studia
+            filters_studia_list.insert(END, new_filter_studia.get())
+            filters_studia.append(new_filter_studia.get())
+
+        def delete_filter_studia(selected_item):
+            filters_studia.remove(filters_studia_list.get(selected_item))
+            filters_studia_list.delete(selected_item)
 
 
 def open_free_space_settings():
@@ -286,16 +488,14 @@ def autocopy_starter():
                         if j.endswith('mp4'):
                             file = Files(j, i[0])
                             if file.m_time_check(autocopy_pause_time_check, autocopy_delta_time):
-                                if file.black_list_check():
-                                    if file.file_exist_check(destination):
+                                if file.black_list_check(black_list_lifetime):
+                                    if file.file_exist_check(destination, filters_peregony, filters_efir, filters_studia):
                                         if file.file_stopped_check(i[0], j):
-                                            full_path = os.path.join(file.rec_name_folder(destination),
-                                                                     file.rec_month_folder(),
-                                                                     file.rec_date_folder())
+                                            full_path = os.path.join(file.rec_name_folder(destination, filters_peregony,
+                                                                                          filters_efir, filters_studia),
+                                                                     file.rec_month_folder(), file.rec_date_folder())
                                             if not os.path.isdir(full_path):
                                                 os.makedirs(full_path)
-                                            print(full_path)
-                                            print(source)
                                             copy_status = file.copy(full_path, source)  # Вызываем копирование
 
                                             if copy_status == 'aborted':
@@ -303,6 +503,7 @@ def autocopy_starter():
                                                 abortion_time = str(datetime.datetime.now())
                                                 abortion_time = abortion_time.partition('.')[0]
                                                 black_list[abortion_time] = j
+                                                print('added to blacklist '+black_list)
         except BaseException as error:
             full_traceback = traceback.format_exc()
             logger.error(full_traceback)
@@ -377,7 +578,7 @@ profile_frame_name.pack_propagate(0)
 
 
 save_values_button = Button(profile, command=save_values)
-save_values_button.configure(text='Сохранить значения', width=20, bg='lightgrey', activebackground='green')
+save_values_button.configure(text='Сохранить настройки', width=20, bg='lightgrey', activebackground='green')
 save_values_button.pack(sid='left', pady=50, padx=125)
 save_values_button.pack_propagate(0)
 
