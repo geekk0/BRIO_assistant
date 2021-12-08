@@ -11,6 +11,8 @@ import psutil as psutil
 import pythoncom
 import time_datetime_converter
 
+#from interface import messager
+
 from win32com.shell import shell, shellcon
 
 black_list = {}
@@ -115,10 +117,12 @@ def first_del_list(days_old):   # Первоначальный список на
 def exist_check(first_delete_list, destination):
 
     final_list = []
+    print('final list: '+str(final_list))
+    print(destination)
 
     for i in os.walk(destination):
         for j in i[2]:
-            if j in first_delete_list:
+            if j in first_delete_list and j not in final_list:
                 final_list.append(j)
 
 
@@ -220,10 +224,8 @@ class Files:
         for x in filters_peregony:
             if x in self.name.upper():
                 match = True
-                print('match')
                 return os.path.join(os.path.abspath(destination), r'ИСХОДНИКИ ПЕРЕГОНЫ')
-            else:
-                print('no match')
+
         if not match:
             for y in filters_efir:
                 if y in self.name.upper():
@@ -314,16 +316,18 @@ class Files:
             dst = shell.SHCreateItemFromParsingName(full_path, None, shell.IID_IShellItem)
             shell_src = os.path.join(os.path.abspath(source), self.name)
             src = shell.SHCreateItemFromParsingName(shell_src, None, shell.IID_IShellItem)
+
+
+
             pfo.CopyItem(src, dst, 'Файл копируется.....' + self.name)  # Schedule an operation to be performed
             success = pfo.PerformOperations()
             aborted = pfo.GetAnyOperationsAborted()
             os.rename(os.path.join(full_path, 'Файл копируется.....' + self.name), os.path.join(full_path, self.name))
-            print(self.name+' скопирован')
 
-            return success and not aborted
+            return 'complete'
         except BaseException as error:
-            print(error)
             msg = 'aborted'
+            logger.error(error)
             return msg
 
 

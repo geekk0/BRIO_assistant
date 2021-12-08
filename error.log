@@ -1937,3 +1937,514 @@ TypeError: can only concatenate str (not "dict") to str
     print('added to blacklist '+black_list)
 TypeError: can only concatenate str (not "dict") to str
 
+2021-12-05 08:29:07 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 507, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:22:49 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:23:09 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:23:15 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:23:22 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:23:28 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:23:42 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:24:04 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:24:10 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:24:17 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:24:23 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:24:29 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:26:50 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:30:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:33:52 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:36:21 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:36:41 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:40:30 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:40:43 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:41:19 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:41:23 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:49:57 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:50:10 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:50:22 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:51:14 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:51:28 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:51:43 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:52:02 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:52:11 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:52:19 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:52:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:52:41 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:52:48 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:53:36 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:53:43 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:53:50 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:53:59 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:54:07 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 16:00:34 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-06 10:46:49 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-06 10:46:59 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-06 10:47:07 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-06 10:47:22 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-06 10:47:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 10:41:55 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:42:49 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:45:20 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:45:27 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:47:20 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:47:29 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:49:43 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:49:52 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:52:25 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:52:34 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:54:20 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:56:24 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 518, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 10:56:32 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:59:20 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:59:29 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:00:22 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "bool") to str
+
+2021-12-08 11:00:32 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "bool") to str
+
+2021-12-08 11:03:51 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:04:00 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:06:59 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 518, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 11:07:07 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:09:29 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 518, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 11:09:37 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:12:26 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 519, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 11:12:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 512, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:13:16 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 520, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 11:14:12 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 518, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 11:16:40 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:17:37 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:19:38 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:19:46 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:21:09 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:21:17 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:23:18 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:23:27 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:24:37 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:24:46 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:26:38 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:26:47 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:30:19 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:30:28 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:31:45 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:31:54 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:33:25 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:33:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:39:38 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:39:46 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:40:15 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:43:26 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:43:35 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:44:39 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:46:00 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:01:50 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:01:59 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:05:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:05:41 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:17:29 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:17:38 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:26:45 ERROR    (-2144927744, 'OLE error 0x80270000', None, None)

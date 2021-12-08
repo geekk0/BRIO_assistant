@@ -2037,3 +2037,817 @@ TypeError: can only concatenate str (not "dict") to str
     print('added to blacklist '+black_list)
 TypeError: can only concatenate str (not "dict") to str
 
+2021-12-03 01:26:09 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-03 01:26:09 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:03:25 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:03:25 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:19:39 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:19:39 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:25:07 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:25:07 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:26:26 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:26:26 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:26:41 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:26:41 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:27:52 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:27:52 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:29:07 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 507, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 08:36:35 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:36:35 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:37:23 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:37:23 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:37:51 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:37:51 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:46:54 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:46:54 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 08:47:38 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:47:38 DEBUG    Первоначальный список файлов на удаление []
+2021-12-05 08:47:38 DEBUG    []
+2021-12-05 08:47:38 DEBUG    Финальный список на удаление []
+2021-12-05 08:47:38 DEBUG    Скрипт закончил выполнение.
+2021-12-05 08:47:39 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:47:39 DEBUG    Первоначальный список файлов на удаление []
+2021-12-05 08:47:39 DEBUG    []
+2021-12-05 08:47:39 DEBUG    Финальный список на удаление []
+2021-12-05 08:47:39 DEBUG    Скрипт закончил выполнение.
+2021-12-05 08:49:24 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 08:49:24 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 09:02:45 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 09:02:45 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 09:05:17 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 09:05:17 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 09:06:45 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 09:06:45 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 14:51:08 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 14:51:08 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 14:51:54 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 14:51:54 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 14:54:01 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 14:54:01 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 14:55:07 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 14:55:07 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 14:57:49 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 14:57:49 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 14:58:56 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 14:58:56 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:03:19 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:03:19 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:04:48 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:04:48 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:09:09 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:09:09 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:14:30 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:14:30 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:16:20 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:16:20 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:22:49 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:23:09 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:23:15 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:23:22 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:23:28 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:23:42 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:24:04 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:24:10 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:24:17 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:24:23 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:24:29 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:25:52 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:25:52 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:26:50 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:30:04 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:30:04 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:30:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:33:25 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:33:25 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:33:52 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 516, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:36:10 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:36:10 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:36:21 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:36:41 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:40:20 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:40:20 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:40:30 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:40:43 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:41:19 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:41:23 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:49:41 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:49:41 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:49:57 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:50:10 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:50:22 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:51:02 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:51:02 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:51:14 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:51:28 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:51:43 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:52:02 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:52:11 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:52:19 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:52:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-05 15:52:41 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:52:48 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:53:19 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:53:19 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-05 15:53:36 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:53:43 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:53:50 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:53:59 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:54:07 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-05 15:58:35 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-05 15:58:35 DEBUG    Первоначальный список файлов на удаление []
+2021-12-05 15:58:35 DEBUG    []
+2021-12-05 15:58:35 DEBUG    Финальный список на удаление []
+2021-12-05 15:58:35 DEBUG    Скрипт закончил выполнение.
+2021-12-05 16:00:34 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-06 10:46:49 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-06 10:46:59 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-06 10:47:07 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-06 10:47:22 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-06 10:47:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 517, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 10:38:53 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 10:38:53 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 10:41:55 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:42:49 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:44:56 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 10:44:56 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 10:45:20 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:45:27 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:46:53 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 10:46:53 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 10:47:20 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:47:29 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:49:07 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 10:49:07 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 10:49:43 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:49:52 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:51:50 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 10:51:50 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 10:52:25 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:52:34 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 510, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:53:44 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 10:53:44 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 10:54:20 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:56:09 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 10:56:09 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 10:56:24 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 518, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 10:56:32 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:58:55 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 10:58:55 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 10:59:20 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:59:29 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 10:59:54 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 10:59:54 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:00:22 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "bool") to str
+
+2021-12-08 11:00:32 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "bool") to str
+
+2021-12-08 11:03:20 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:03:20 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:03:51 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:04:00 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:06:48 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:06:48 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:06:59 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 518, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 11:07:07 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:09:17 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:09:17 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:09:29 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 518, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 11:09:37 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:12:14 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:12:14 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:12:26 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 519, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 11:12:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 512, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:13:05 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:13:05 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:13:16 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 520, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 11:14:01 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:14:01 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:14:12 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 518, in autocopy_starter
+    print('added to blacklist '+black_list)
+TypeError: can only concatenate str (not "dict") to str
+
+2021-12-08 11:15:30 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:15:30 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:16:06 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:16:06 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:16:40 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:17:10 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:17:10 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:17:37 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:19:12 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:19:12 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:19:38 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:19:46 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:20:39 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:20:39 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:21:09 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:21:17 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:22:26 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:22:26 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:22:46 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:22:46 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:23:18 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:23:27 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:24:08 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:24:08 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:24:37 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:24:46 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:26:07 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:26:07 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:26:38 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:26:47 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:29:40 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:29:40 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:29:50 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:29:50 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:30:19 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:30:28 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:31:02 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:31:02 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:31:14 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:31:14 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:31:45 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:31:54 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:32:50 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:32:50 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:33:25 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:33:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:39:06 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:39:06 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:39:38 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:39:46 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:39:57 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:39:57 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:40:15 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:42:56 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:42:56 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:43:26 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:43:35 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:44:11 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:44:11 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:44:39 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 11:45:50 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 11:45:50 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 11:46:00 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:01:20 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:01:20 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:01:50 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:01:59 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:04:55 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:04:55 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:05:33 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:05:41 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:16:59 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:16:59 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:17:29 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:17:38 ERROR    Traceback (most recent call last):
+  File "C:/Users/Gekk0/PycharmProjects/360/BRIO_assistant/interface.py", line 511, in autocopy_starter
+    print('copy_status = ' + copy_status)
+TypeError: can only concatenate str (not "NoneType") to str
+
+2021-12-08 12:21:13 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:21:13 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:26:33 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:26:33 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:26:45 ERROR    (-2144927744, 'OLE error 0x80270000', None, None)
+2021-12-08 12:29:58 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:29:58 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:29:58 DEBUG    []
+2021-12-08 12:29:59 DEBUG    Финальный список на удаление []
+2021-12-08 12:29:59 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:38:19 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:38:19 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:38:19 DEBUG    []
+2021-12-08 12:38:19 DEBUG    Финальный список на удаление []
+2021-12-08 12:38:19 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:38:26 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:38:26 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:38:26 DEBUG    []
+2021-12-08 12:38:26 DEBUG    Финальный список на удаление []
+2021-12-08 12:38:26 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:40:02 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:40:02 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:40:09 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:40:09 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:40:09 DEBUG    []
+2021-12-08 12:40:09 DEBUG    Финальный список на удаление []
+2021-12-08 12:40:09 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:40:21 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:40:21 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:40:21 DEBUG    []
+2021-12-08 12:40:21 DEBUG    Финальный список на удаление []
+2021-12-08 12:40:21 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:40:27 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:40:27 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:40:27 DEBUG    []
+2021-12-08 12:40:27 DEBUG    Финальный список на удаление []
+2021-12-08 12:40:27 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:41:26 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:41:26 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:41:34 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:41:34 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:41:34 DEBUG    []
+2021-12-08 12:41:34 DEBUG    Финальный список на удаление []
+2021-12-08 12:41:34 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:41:38 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:41:38 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:41:38 DEBUG    []
+2021-12-08 12:41:38 DEBUG    Финальный список на удаление []
+2021-12-08 12:41:38 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:43:36 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:43:36 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:43:43 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:46:41 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:46:41 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:46:46 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:49:15 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:49:15 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:49:25 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:49:50 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:49:50 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:49:56 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:49:56 DEBUG    Первоначальный список файлов на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 12:49:56 DEBUG    ['новости.mp4', 'новости_2.mp4']
+2021-12-08 12:49:56 DEBUG    Финальный список на удаление ['новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4']
+2021-12-08 12:49:57 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:53:31 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:53:31 DEBUG    Первоначальный список файлов на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 12:53:31 DEBUG    ['новости.mp4', 'новости_2.mp4']
+2021-12-08 12:53:31 DEBUG    Финальный список на удаление ['новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4']
+2021-12-08 12:53:31 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:55:10 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:55:10 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:55:15 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:55:15 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:55:15 DEBUG    []
+2021-12-08 12:55:15 DEBUG    Финальный список на удаление []
+2021-12-08 12:55:15 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:56:49 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:56:49 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:56:49 DEBUG    []
+2021-12-08 12:56:49 DEBUG    Финальный список на удаление []
+2021-12-08 12:56:49 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:56:55 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:56:55 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:56:55 DEBUG    []
+2021-12-08 12:56:55 DEBUG    Финальный список на удаление []
+2021-12-08 12:56:55 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:57:00 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:57:00 DEBUG    Первоначальный список файлов на удаление []
+2021-12-08 12:57:00 DEBUG    []
+2021-12-08 12:57:00 DEBUG    Финальный список на удаление []
+2021-12-08 12:57:00 DEBUG    Скрипт закончил выполнение.
+2021-12-08 12:57:54 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:57:54 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:58:13 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:58:13 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:58:53 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:58:53 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 12:59:47 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 12:59:47 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 13:00:48 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:00:48 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 13:00:55 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:00:55 DEBUG    Первоначальный список файлов на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:00:55 DEBUG    ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:00:55 DEBUG    Финальный список на удаление ['новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4']
+2021-12-08 13:00:55 DEBUG    Скрипт закончил выполнение.
+2021-12-08 13:03:15 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:03:15 DEBUG    Первоначальный список файлов на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:03:15 DEBUG    ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:03:15 DEBUG    Финальный список на удаление ['новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4']
+2021-12-08 13:03:15 DEBUG    Скрипт закончил выполнение.
+2021-12-08 13:04:49 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:04:49 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 13:04:55 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:04:55 DEBUG    Первоначальный список файлов на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:04:55 DEBUG    ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:05:24 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:05:24 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 13:05:28 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:05:28 DEBUG    Первоначальный список файлов на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:05:28 DEBUG    ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:05:28 DEBUG    Финальный список на удаление ['новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4', 'новости.mp4', 'новости_2.mp4']
+2021-12-08 13:05:28 DEBUG    Скрипт закончил выполнение.
+2021-12-08 13:09:12 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:09:12 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 13:09:19 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:09:19 DEBUG    Первоначальный список файлов на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:09:19 DEBUG    ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:09:19 DEBUG    Финальный список на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:09:19 DEBUG    Скрипт закончил выполнение.
+2021-12-08 13:10:27 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:10:27 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 13:10:31 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:10:31 DEBUG    Первоначальный список файлов на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:10:31 DEBUG    ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:10:31 DEBUG    Финальный список на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:10:31 DEBUG    Скрипт закончил выполнение.
+2021-12-08 13:18:08 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:18:08 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 13:19:07 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:19:07 DEBUG    ORIGINAL на диске D:\ORIGINAL
+2021-12-08 13:19:10 DEBUG    Найдены диски BRIO D:\BRIO
+2021-12-08 13:19:10 DEBUG    Первоначальный список файлов на удаление ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:19:10 DEBUG    ['новости.mp4', 'новости_2.mp4']
+2021-12-08 13:19:10 DEBUG    Финальный список на удаление ['новости_2.mp4']
+2021-12-08 13:19:10 DEBUG    Скрипт закончил выполнение.

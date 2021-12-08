@@ -35,6 +35,7 @@ free_space_running = False
 alarm = ''
 autocopy_stop = False
 ac_command = queue.SimpleQueue()
+autocopy_files_list = ''
 
 # Инициализация:
 sources = src_init(RAW_SOURCE_LIST)
@@ -453,23 +454,27 @@ def open_free_space_settings():
 def run_autocopy_switcher():
     global autocopy_stop
     global autocopy_running
+    global autocopy_files_list
+
     if alarm:
         autocopy_messages.set(alarm)
     else:
         autocopy_thread = threading.Thread(None, target=autocopy_starter, daemon=False)
         if autocopy_running is False:
-            autocopy_messages.set('...Выполнение операций...')
+            autocopy_messages.set('...Автоматическое копирование запущено...')
             autocopy_run_button.configure(text='Активно', activebackground='red', bg='green')
             autocopy_running = True
             autocopy_stop = False
             ac_command.put_nowait(item=autocopy_stop)
             autocopy_thread.start()
         else:
-            autocopy_messages.set('...Завершение операций...')
+            autocopy_messages.set(autocopy_files_list+'\nАвтоматическое копирование завершено.')
             autocopy_run_button.configure(text='Запустить', activebackground='green', bg='lightgrey')
             autocopy_running = False
             autocopy_stop = True
             ac_command.put_nowait(item=autocopy_stop)
+            autocopy_files_list = ''
+
 
 
 
@@ -496,20 +501,34 @@ def autocopy_starter():
                                                                      file.rec_month_folder(), file.rec_date_folder())
                                             if not os.path.isdir(full_path):
                                                 os.makedirs(full_path)
+                                            copy_status = 'in_progress'
+                                            copy_thread = threading.Thread(None, copy_monitor, args=(file.name,
+                                                                                            copy_status), daemon=False)
+                                            copy_thread.start()
+
                                             copy_status = file.copy(full_path, source)  # Вызываем копирование
+                                            print(type(copy_status))
+                                            print('copy_status = ' + copy_status)
 
                                             if copy_status == 'aborted':
                                                 # При отмене копирования добавляем в black_list
                                                 abortion_time = str(datetime.datetime.now())
                                                 abortion_time = abortion_time.partition('.')[0]
                                                 black_list[abortion_time] = j
-                                                print('added to blacklist '+black_list)
+
+                                            copy_thread_result = threading.Thread(None, copy_monitor,
+                                                                        args=(file.name, copy_status), daemon=False)
+                                            copy_thread_result.start()
+
+                                            if copy_status is None:
+                                                print('copy_status = None')
+
         except BaseException as error:
             full_traceback = traceback.format_exc()
             logger.error(full_traceback)
         global autocopy_running
         global autocopy_stop
-        time.sleep(1)
+        time.sleep(2)
         if autocopy_stop:
             break
 
@@ -544,7 +563,8 @@ def clean_space():
     if alarm:
         free_space_messages.set(alarm)
     else:
-        first_delete_list = first_del_list(days_old)
+        first_delete_list = first_del_list(int(days_old))
+        print(first_delete_list)
         logger.debug(first_delete_list)
         output = 'Первоначальный список на удаление: ' + str(first_delete_list)
         free_space_messages.set(output)
@@ -554,6 +574,20 @@ def clean_space():
         output_text = remove(final_list, sources)
         output += '\n' + output_text
         free_space_messages.set(output)
+
+
+def copy_monitor(filename, status):
+    global autocopy_files_list
+
+    if 'in_progress' in status:
+        autocopy_files_list += '\nКопируется файл ' + filename
+    elif 'aborted' in status:
+        autocopy_files_list += '\nКопирование файла '+filename+' прервано'
+    elif 'complete' in status:
+        print('completed')
+        autocopy_files_list += '\nФайл ' + filename+' скопирован'
+
+    autocopy_messages.set(autocopy_files_list)
 
 
 
@@ -615,7 +649,7 @@ autocopy_messages_label.pack(sid='left', padx=20)
 
 # Фрейм свободного места
 
-space_limit_sv = StringVar()
+space_limit_sv = IntVar()
 space_limit_sv.set(space_limit)
 
 free_space_run_button = Button(free_space, command=clean_space)
