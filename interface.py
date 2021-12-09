@@ -544,7 +544,7 @@ def run_free_space_switcher():
             free_space_running = True
             free_space_on()
         else:
-            free_space_messages.set('...Завершение операций...')
+            free_space_messages.set('Отслеживание свободного места завершено.')
             free_space_run_button.configure(text='Запустить', activebackground='green', bg='lightgrey')
             free_space_running = False
 
