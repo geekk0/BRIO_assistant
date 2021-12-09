@@ -476,14 +476,6 @@ def run_autocopy_switcher():
             autocopy_files_list = ''
 
 
-
-
-"""def command_print(counter=0):
-    autocopy_messages.set(counter)
-    if autocopy_running:
-        gui.after(1000, lambda: command_print(counter+1))"""
-
-
 def autocopy_starter():
     while True:
         try:
@@ -507,8 +499,6 @@ def autocopy_starter():
                                             copy_thread.start()
 
                                             copy_status = file.copy(full_path, source)  # Вызываем копирование
-                                            print(type(copy_status))
-                                            print('copy_status = ' + copy_status)
 
                                             if copy_status == 'aborted':
                                                 # При отмене копирования добавляем в black_list
@@ -519,9 +509,6 @@ def autocopy_starter():
                                             copy_thread_result = threading.Thread(None, copy_monitor,
                                                                         args=(file.name, copy_status), daemon=False)
                                             copy_thread_result.start()
-
-                                            if copy_status is None:
-                                                print('copy_status = None')
 
         except BaseException as error:
             full_traceback = traceback.format_exc()
@@ -564,12 +551,9 @@ def clean_space():
         free_space_messages.set(alarm)
     else:
         first_delete_list = first_del_list(int(days_old))
-        print(first_delete_list)
-        logger.debug(first_delete_list)
-        output = 'Первоначальный список на удаление: ' + str(first_delete_list)
+        output = ''
         free_space_messages.set(output)
         final_list = exist_check(first_delete_list, destination)
-        output += '\nФинальный список на удаление:' + str(final_list)
         free_space_messages.set(output)
         output_text = remove(final_list, sources)
         output += '\n' + output_text
@@ -584,7 +568,6 @@ def copy_monitor(filename, status):
     elif 'aborted' in status:
         autocopy_files_list += '\nКопирование файла '+filename+' прервано'
     elif 'complete' in status:
-        print('completed')
         autocopy_files_list += '\nФайл ' + filename+' скопирован'
 
     autocopy_messages.set(autocopy_files_list)
@@ -674,8 +657,5 @@ free_space_messages.set('Здесь отображаются действия с
 free_space_messages_label = Label(free_space)
 free_space_messages_label.configure(textvariable=free_space_messages, width=50, height=13, bg='lightgrey', wraplength=330)
 free_space_messages_label.pack(sid='left', padx=19)
-
-
-print(active_user, space_limit)
 
 gui.mainloop()

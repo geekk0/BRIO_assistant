@@ -117,8 +117,6 @@ def first_del_list(days_old):   # Первоначальный список на
 def exist_check(first_delete_list, destination):
 
     final_list = []
-    print('final list: '+str(final_list))
-    print(destination)
 
     for i in os.walk(destination):
         for j in i[2]:
@@ -150,7 +148,7 @@ def remove(final_list, sources):
                     deleted_files += 1
                     optimized_memory += cache_memory
 
-    logger.debug('Скрипт закончил выполнение.')
+    logger.debug('Скрипт очистки завершен.')
 
     output_text = 'Очистка закончена. Удалено ' + str(deleted_files) + ' файлов, освободилось '+ \
                   str(int(optimized_memory / 1024 / 1024 / 1024)) + ' Гб '+ str(cant_delete)+' файлов только для чтения'
@@ -192,14 +190,12 @@ class Files:
         pause_time = datetime.timedelta(seconds=autocopy_pause_time_check)
 
         if (delta < delta_check) and (delta > pause_time):
-            print('Недавние файлы: '+self.name)
             return True
 
     def black_list_check(self, black_list_lifetime):
 
         match = False
         tmp_black_list = black_list.copy()
-        print('blacklist_check: '+str(black_list))
 
         for key in tmp_black_list.keys():
             black_list_add_time = datetime.datetime.strptime(key, '%Y-%m-%d %H:%M:%S')
@@ -212,15 +208,12 @@ class Files:
                 match = True
                 break
         if not match:
-            print(self.name + ' НЕ в черном листе')
             return True
         else:
-            print(self.name + ' в черном листе')
             return False
 
     def rec_name_folder(self, destination, filters_peregony, filters_efir, filters_studia):
         match = False
-        print(filters_peregony)
         for x in filters_peregony:
             if x in self.name.upper():
                 match = True
@@ -283,10 +276,8 @@ class Files:
             full_path = None
         if full_path:
             if os.path.isfile(os.path.join(full_path, self.name)):
-                print(self.name + ' уже лежит в ориджинал')
                 return False
             else:
-                print(self.name + ' не лежит в ориджинал')
                 return True
 
     def file_stopped_check(self, folder, name):
@@ -301,11 +292,8 @@ class Files:
             pass
 
         if size_first == size_second:
-            print('запись файла остановлена')
             file_stopped = True
             return True
-        else:
-            print('файл еще пишется')
 
     def copy(self, full_path, source):
         try:
