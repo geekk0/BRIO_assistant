@@ -11,6 +11,9 @@ from tkinter import messagebox
 from funcs_and_classes import *
 # Импорт переменных из config.ini
 
+os.system('hide_current_console.exe')
+
+
 config = configparser.ConfigParser()
 config.read('config.ini')
 users = config['PROFILES']['users']    # Список профилей
@@ -37,6 +40,8 @@ autocopy_stop = False
 ac_command = queue.SimpleQueue()
 autocopy_files_list = ''
 
+
+
 # Инициализация:
 sources = src_init(RAW_SOURCE_LIST)
 if not sources:
@@ -52,6 +57,9 @@ gui.resizable(width=FALSE, height=FALSE)
 gui.configure(bg='darkgrey')
 
 active_user = 'Default'
+
+logger.debug(destination)
+logger.debug(sources)
 
 # Создаем фреймы
 
@@ -120,6 +128,7 @@ def save_values():
 
     with open(os.path.join('profiles', active_user + '.ini'), 'w') as configfile:
         options.write(configfile)
+
 
 
 def load_profile():
@@ -196,10 +205,10 @@ def open_autocopy_settings():
     check_time.set(autocopy_pause_time_check)
 
     delta_time = IntVar()
-    delta_time.set(autocopy_delta_time)
+    delta_time.set(int(autocopy_delta_time/60/60))
 
     black_list_time = IntVar()
-    black_list_time.set(black_list_lifetime)
+    black_list_time.set(int(black_list_lifetime/60/60))
 
     autocopy_settings_window = Toplevel(gui)
     autocopy_settings_window.title('Настройки автокопирования')
@@ -215,14 +224,14 @@ def open_autocopy_settings():
     time_check_setting = Entry(autocopy_settings_window, textvariable=check_time)
     time_check_setting.pack(sid='top', padx=10)
 
-    set_delta_time_label_name = Label(autocopy_settings_window, text='Насколько старые файлы будем копировать:')  # Delta
+    set_delta_time_label_name = Label(autocopy_settings_window, text='Насколько старые файлы будем копировать (в часах):')  # Delta
     set_delta_time_label_name.pack(sid='top', padx=10, pady=20)
 
     delta_time_setting = Entry(autocopy_settings_window, textvariable=delta_time)
     delta_time_setting.pack(sid='top', padx=10)
 
     set_black_list_time_label = Label(autocopy_settings_window,
-                                      text='При отмене копирования файла, через сколько попытка возобновится:')  # Delta
+                                      text='При отмене копирования файла, через сколько часов попытка возобновится:')  # Delta
     set_black_list_time_label.pack(sid='top', padx=10, pady=20)
 
     black_list_time_setting = Entry(autocopy_settings_window, textvariable=black_list_time)
@@ -264,8 +273,8 @@ def open_autocopy_settings():
         black_list_time_setting.insert(0, black_list_time)
 
         autocopy_pause_time_check = time_value
-        autocopy_delta_time = delta_time
-        black_list_lifetime = black_list_time
+        autocopy_delta_time = delta_time*60*60
+        black_list_lifetime = black_list_time*60*60
 
         autocopy_settings_window.destroy()
 
@@ -482,7 +491,7 @@ def autocopy_starter():
             for source in sources:
                 for i in os.walk(source):
                     for j in i[2]:
-                        if j.endswith('mp4'):
+                        if j.endswith(SUFFIX):
                             file = Files(j, i[0])
                             if file.m_time_check(autocopy_pause_time_check, autocopy_delta_time):
                                 if file.black_list_check(black_list_lifetime):

@@ -74,7 +74,6 @@ def src_init(raw_dirs_list):  # Находим диски BRIO
 
 def dest_init(raw_dirs_list):  # Находим диски ORIGINAL
 
-    dest_list = []
     for d in raw_dirs_list:
         if os.path.isdir(d):
             dest_path = d
