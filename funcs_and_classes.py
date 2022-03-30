@@ -6,18 +6,18 @@ import queue
 import threading
 import time
 import traceback
+import pytz
+import locale
+import calendar
 
 import psutil as psutil
 import pythoncom
-import time_datetime_converter
-
-#from interface import messager
 
 from win32com.shell import shell, shellcon
 
 black_list = {}
 
-current_path = os.path.dirname(os.path.realpath(__file__))
+current_path = os.getcwd()
 
 logger = logging.getLogger('simple_example')
 logger.setLevel(logging.DEBUG)
@@ -99,14 +99,16 @@ def first_del_list(days_old):   # Первоначальный список на
                 if j.endswith(SUFFIX):
                     path = os.path.join(os.path.abspath(i[0]), j)
                     file_create_date = time.ctime(os.path.getctime(path))
-                    converted_file_create_date = time_datetime_converter.convert_to_datetime(
-                        file_create_date)  # Импортированная функция convert_to_datetime
-                    now = datetime.date.today()
-                    time_check = datetime.timedelta(days=days_old)
+                    print(file_create_date)
+                    with calendar.different_locale('C'):
+                        converted_file_create_date = datetime.datetime.strptime\
+                            (file_create_date, '%a %b %d %H:%M:%S %Y').date()
+                        now = datetime.date.today()
+                        time_check = datetime.timedelta(days=days_old)
 
-                    if (now - converted_file_create_date) > time_check:
-                        if 'не удалять' not in path and 'НЕ УДАЛЯТЬ' not in path:
-                            first_delete_list.append(j)
+                        if (now - converted_file_create_date) > time_check:
+                            if 'не удалять' not in path and 'НЕ УДАЛЯТЬ' not in path:
+                                first_delete_list.append(j)
 
     logger.debug('Первоначальный список файлов на удаление ' + str(first_delete_list))
 
@@ -117,12 +119,16 @@ def exist_check(first_delete_list, destination):
 
     final_list = []
 
-    for i in os.walk(destination):
-        for j in i[2]:
-            if j in first_delete_list and j not in final_list:
-                final_list.append(j)
 
+    source_dirs = ['ИСХОДНИКИ ПЕРЕГОНЫ', "ИСХОДНИКИ ЗАПИСЬ ЭФИРА", "ИСХОДНИКИ ЗАПИСИ СТУДИЙ"]
 
+    for dir in source_dirs:
+        source_files_directory = os.path.join(destination, dir)
+
+        for i in os.walk(source_files_directory):
+            for j in i[2]:
+                if j in first_delete_list and j not in final_list:
+                    final_list.append(j)
 
     logger.debug('Финальный список на удаление '+str(final_list))
     return final_list
@@ -178,8 +184,9 @@ class Files:
         return os.path.getsize(file_path)
 
     def file_mtime(self):
-        return datetime.datetime.strptime(time.ctime(os.path.getmtime(self.path + '/' + self.name)),
-                                          "%a %b %d %H:%M:%S %Y")
+        with calendar.different_locale('C'):
+            return datetime.datetime.strptime(time.ctime(os.path.getmtime(self.path + '/' + self.name)),
+                                              "%a %b %d %H:%M:%S %Y")
 
     def m_time_check(self, autocopy_pause_time_check=PAUSE_TIME_INT, autocopy_delta_time=DELTA_CHECK_INT):  # Проверка на подходящее время изменения файла
         today = datetime.datetime.today()
@@ -231,37 +238,16 @@ class Files:
         if not match:
             return False
 
-
     def rec_month_folder(self):
-        now_month = datetime.date.today()
 
-        month = datetime.datetime.strftime(now_month, '%B')
+        try:
+            locale.setlocale(locale.LC_ALL, "")
 
-        if month == 'January':
-            month = 'ЯНВАРЬ'
-        if month == 'February':
-            month = 'ФЕВРАЛЬ'
-        if month == 'March':
-            month = 'МАРТ'
-        if month == 'April':
-            month = 'АПРЕЛЬ'
-        if month == 'May':
-            month = 'МАЙ'
-        if month == 'June':
-            month = 'ИЮНЬ'
-        if month == 'July':
-            month = 'ИЮЛЬ'
-        if month == 'August':
-            month = 'АВГУСТ'
-        if month == 'September':
-            month = 'СЕНТЯБРЬ'
-        if month == 'October':
-            month = 'ОКТЯБРЬ'
-        if month == 'November':
-            month = 'НОЯБРЬ'
-        if month == 'December':
-            month = 'ДЕКАБРЬ'
-        return month
+            month = datetime.datetime.now().strftime("%B").upper()
+            return month
+
+        except Exception as e:
+            print(e)
 
     def rec_date_folder(self):
         today = datetime.datetime.today()
@@ -289,6 +275,7 @@ class Files:
             size_first = None
             size_second = None
             pass
+
 
         if size_first == size_second:
             file_stopped = True

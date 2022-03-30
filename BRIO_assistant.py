@@ -1,34 +1,21 @@
-import configparser
-import ctypes
-import os
-import queue
-import threading
-import traceback
-
-
 from tkinter import *
 from tkinter import messagebox
+
 from funcs_and_classes import *
+
+
 # Импорт переменных из config.ini
-
-os.system('hide_current_console.exe')
-
-
 config = configparser.ConfigParser()
 config.read('config.ini')
-users = config['PROFILES']['users']    # Список профилей
+users = config['PROFILES']['users']
 users_list = users.split(' ')
 
-# Задаем значения по умолчанию для свободного места
-
-space_limit = 72
+space_limit = 72                                    # Задаем значения по умолчанию для свободного места
 autocopy_pause_time_check = 70
 autocopy_delta_time = 10000
 days_old = 14
 
-# Задаем значения по умолчанию для автокопирования
-
-black_list_lifetime = BLACK_LIST_DELTA_INT
+black_list_lifetime = BLACK_LIST_DELTA_INT          # Задаем значения по умолчанию для автокопирования
 filters_peregony = PEREGONY
 filters_efir = NOVOSTI
 filters_studia = STUDIA
@@ -40,10 +27,7 @@ autocopy_stop = False
 ac_command = queue.SimpleQueue()
 autocopy_files_list = ''
 
-
-
-# Инициализация:
-sources = src_init(RAW_SOURCE_LIST)
+sources = src_init(RAW_SOURCE_LIST)                  # Инициализация:
 if not sources:
     alarm = 'Диск BRIO не найден'
 destination = dest_init(RAW_ORIGINAL_LIST)
@@ -58,10 +42,6 @@ gui.configure(bg='darkgrey')
 
 active_user = 'Default'
 
-logger.debug(destination)
-logger.debug(sources)
-
-# Создаем фреймы
 
 profile = LabelFrame(gui, text='Профиль')
 profile.configure(bg='grey', height=180, width=800, font=15)
@@ -118,17 +98,15 @@ def save_values():
     global black_list_lifetime
 
     options = configparser.ConfigParser()
-    options['SPACE_LIMIT'] = {'space_limit': space_limit}
-    options['DAYS_OLD'] = {'days_old': days_old}
+    options['SPACE_LIMIT'] = {'space_limit': str(space_limit)}
+    options['DAYS_OLD'] = {'days_old': str(days_old)}
     options['AUTOCOPY'] = {'autocopy_pause_time_check': autocopy_pause_time_check,
                            'autocopy_delta_time': autocopy_delta_time, 'filters_peregony': filters_peregony,
                            'filters_efir': filters_efir, 'filters_studia': filters_studia,
                            'black_list_lifetime': black_list_lifetime}
 
-
     with open(os.path.join('profiles', active_user + '.ini'), 'w') as configfile:
         options.write(configfile)
-
 
 
 def load_profile():
@@ -165,36 +143,36 @@ def load_profile():
         active_profile_name_lbl.configure(text=active_user, width=20, bg='lightgrey', activebackground='green')
         config.read(os.path.join('profiles', selected_item+'.ini'))
         try:
-            space_limit = config['SPACE_LIMIT']['space_limit']
-        except:
+            space_limit = int(config['SPACE_LIMIT']['space_limit'])
+        except ValueError:
             space_limit = space_limit
         try:
-            days_old = config['DAYS_OLD']['days_old']
-        except:
+            days_old = int(config['DAYS_OLD']['days_old'])
+        except ValueError:
             days_old = days_old
         try:
             autocopy_pause_time_check = int(config['AUTOCOPY']['autocopy_pause_time_check'])
-        except:
+        except ValueError:
             autocopy_pause_time_check = autocopy_pause_time_check
         try:
             autocopy_delta_time = int(config['AUTOCOPY']['autocopy_delta_time'])
-        except:
+        except ValueError:
             autocopy_delta_time = autocopy_delta_time
         try:
             filters_peregony = eval(config['AUTOCOPY']['filters_peregony'])
-        except:
+        except ValueError:
             filters_peregony = filters_peregony
         try:
             filters_efir = eval(config['AUTOCOPY']['filters_efir'])
-        except:
+        except ValueError:
             filters_efir = filters_efir
         try:
             filters_studia = eval(config['AUTOCOPY']['filters_studia'])
-        except:
+        except ValueError:
             filters_studia = filters_efir
         try:
             black_list_lifetime = int(config['AUTOCOPY']['black_list_lifetime'])
-        except:
+        except ValueError:
             black_list_lifetime = BLACK_LIST_DELTA_INT
         load_profile_window.destroy()
 
@@ -224,14 +202,15 @@ def open_autocopy_settings():
     time_check_setting = Entry(autocopy_settings_window, textvariable=check_time)
     time_check_setting.pack(sid='top', padx=10)
 
-    set_delta_time_label_name = Label(autocopy_settings_window, text='Насколько старые файлы будем копировать (в часах):')  # Delta
+    set_delta_time_label_name = Label(autocopy_settings_window,
+                                      text='Насколько старые файлы будем копировать (в часах):')  # Delta
     set_delta_time_label_name.pack(sid='top', padx=10, pady=20)
 
     delta_time_setting = Entry(autocopy_settings_window, textvariable=delta_time)
     delta_time_setting.pack(sid='top', padx=10)
 
     set_black_list_time_label = Label(autocopy_settings_window,
-                                      text='При отмене копирования файла, через сколько часов попытка возобновится:')  # Delta
+                                      text='При отмене копирования файла, через сколько часов попытка возобновится:')
     set_black_list_time_label.pack(sid='top', padx=10, pady=20)
 
     black_list_time_setting = Entry(autocopy_settings_window, textvariable=black_list_time)
@@ -250,14 +229,14 @@ def open_autocopy_settings():
     btn_filters_peregony.pack(sid='top', pady=0, padx=0)
 
     btn_filters_efir = Button(autocopy_settings_window, height=1, width=15, text="ЗАПИСЬ ЭФИРА",
-                                  command=lambda: show_filters_efir())
+                              command=lambda: show_filters_efir())
     btn_filters_efir.pack(sid='top', pady=10, padx=30)
 
     btn_filters_studia = Button(autocopy_settings_window, height=1, width=15, text="ЗАПИСЬ СТУДИЙ",
-                                  command=lambda: show_filters_studia())
+                                command=lambda: show_filters_studia())
     btn_filters_studia.pack(sid='top', pady=0, padx=60)
 
-    def set_autocopy_settings(time_value, delta_time, black_list_time):
+    def set_autocopy_settings(time_value, local_delta_time, local_black_list_time):
         global autocopy_pause_time_check
         global autocopy_delta_time
         global black_list_lifetime
@@ -270,11 +249,11 @@ def open_autocopy_settings():
         delta_time_setting.insert(0, delta_time)
 
         black_list_time_setting.delete(0, "end")
-        black_list_time_setting.insert(0, black_list_time)
+        black_list_time_setting.insert(0, local_black_list_time)
 
         autocopy_pause_time_check = time_value
-        autocopy_delta_time = delta_time*60*60
-        black_list_lifetime = black_list_time*60*60
+        autocopy_delta_time = local_delta_time*60*60
+        black_list_lifetime = local_black_list_time*60*60
 
         autocopy_settings_window.destroy()
 
@@ -296,28 +275,28 @@ def open_autocopy_settings():
 
         config.read(os.path.join('profiles', active_user + '.ini'))
 
-        set_new_filter_peregony_label = Label(filters_peregony_window,
-                                          text='Введите новый фильтр:')  # Delta
+        set_new_filter_peregony_label = Label(filters_peregony_window, text='Введите новый фильтр:')
         set_new_filter_peregony_label.pack(sid='top', padx=10, pady=20)
 
         new_filter_peregony_entry = Entry(filters_peregony_window, textvariable=new_filter_peregony)
         new_filter_peregony_entry.pack(sid='top', padx=0)
 
         add_filter_peregony_btn = Button(filters_peregony_window, text="Добавить",
-                                         command=lambda: add_filter_peregony(new_filter_peregony))
+                                         command=lambda: add_filter_peregony(new_filter_peregony.get()))
         add_filter_peregony_btn.pack(sid="top", pady=5)
 
         delete_filter_peregony_btn = Button(filters_peregony_window, text="Удалить выбранный фильтр",
-                                            command = lambda: delete_filter_peregony((filters_peregony_list.curselection())))
+                                            command=lambda: delete_filter_peregony((filters_peregony_list.curselection()
+                                                                                    )))
         delete_filter_peregony_btn.pack(sid='top', pady=10)
 
-        for filter in filters_peregony:
-            filters_peregony_list.insert(END, filter)
+        for single_filter in filters_peregony:
+            filters_peregony_list.insert(END, single_filter)
 
-        def add_filter_peregony(new_filter_peregony):
+        def add_filter_peregony(local_new_filter_peregony):
             global filters_peregony
-            filters_peregony_list.insert(END, new_filter_peregony.get())
-            filters_peregony.append(new_filter_peregony.get())
+            filters_peregony_list.insert(END, local_new_filter_peregony)
+            filters_peregony.append(local_new_filter_peregony)
 
         def delete_filter_peregony(selected_item):
             filters_peregony.remove(filters_peregony_list.get(selected_item))
@@ -349,20 +328,20 @@ def open_autocopy_settings():
         new_filter_efir_entry.pack(sid='top', padx=0)
 
         add_filter_efir_btn = Button(filters_efir_window, text="Добавить",
-                                         command=lambda: add_filter_efir(new_filter_efir))
+                                     command=lambda: add_filter_efir(new_filter_efir.get()))
         add_filter_efir_btn.pack(sid="top", pady=5)
 
         delete_filter_efir_btn = Button(filters_efir_window, text="Удалить выбранный фильтр",
-                                            command = lambda: delete_filter_efir((filters_efir_list.curselection())))
+                                        command=lambda: delete_filter_efir((filters_efir_list.curselection())))
         delete_filter_efir_btn.pack(sid='top', pady=10)
 
-        for filter in filters_efir:
-            filters_efir_list.insert(END, filter)
+        for single_filter in filters_efir:
+            filters_efir_list.insert(END, single_filter)
 
-        def add_filter_efir(new_filter_efir):
+        def add_filter_efir(local_new_filter_efir):
             global filters_efir
-            filters_efir_list.insert(END, new_filter_efir.get())
-            filters_efir.append(new_filter_efir.get())
+            filters_efir_list.insert(END, local_new_filter_efir)
+            filters_efir.append(local_new_filter_efir)
 
         def delete_filter_efir(selected_item):
             filters_efir.remove(filters_efir_list.get(selected_item))
@@ -394,20 +373,20 @@ def open_autocopy_settings():
         new_filter_studia_entry.pack(sid='top', padx=0)
 
         add_filter_studia_btn = Button(filters_studia_window, text="Добавить",
-                                       command=lambda: add_filter_studia(new_filter_studia))
+                                       command=lambda: add_filter_studia(new_filter_studia.get()))
         add_filter_studia_btn.pack(sid="top", pady=5)
 
         delete_filter_studia_btn = Button(filters_studia_window, text="Удалить выбранный фильтр",
                                           command=lambda: delete_filter_studia((filters_studia_list.curselection())))
         delete_filter_studia_btn.pack(sid='top', pady=10)
 
-        for filter in filters_studia:
-            filters_studia_list.insert(END, filter)
+        for single_filter in filters_studia:
+            filters_studia_list.insert(END, single_filter)
 
-        def add_filter_studia(new_filter_studia):
+        def add_filter_studia(local_new_filter_studia):
             global filters_studia
-            filters_studia_list.insert(END, new_filter_studia.get())
-            filters_studia.append(new_filter_studia.get())
+            filters_studia_list.insert(END, local_new_filter_studia)
+            filters_studia.append(local_new_filter_studia)
 
         def delete_filter_studia(selected_item):
             filters_studia.remove(filters_studia_list.get(selected_item))
@@ -468,7 +447,7 @@ def run_autocopy_switcher():
     if alarm:
         autocopy_messages.set(alarm)
     else:
-        autocopy_thread = threading.Thread(None, target=autocopy_starter, daemon=False)
+        autocopy_thread = threading.Thread(None, target=autocopy_starter, daemon=True)
         if autocopy_running is False:
             autocopy_messages.set('...Автоматическое копирование запущено...')
             autocopy_run_button.configure(text='Активно', activebackground='red', bg='green')
@@ -483,10 +462,12 @@ def run_autocopy_switcher():
             autocopy_stop = True
             ac_command.put_nowait(item=autocopy_stop)
             autocopy_files_list = ''
+            autocopy_thread.do_run = "False"
 
 
 def autocopy_starter():
-    while True:
+    ac_thread = threading.currentThread()
+    while getattr(ac_thread, "do_run", True):
         try:
             for source in sources:
                 for i in os.walk(source):
@@ -495,38 +476,48 @@ def autocopy_starter():
                             file = Files(j, i[0])
                             if file.m_time_check(autocopy_pause_time_check, autocopy_delta_time):
                                 if file.black_list_check(black_list_lifetime):
-                                    if file.file_exist_check(destination, filters_peregony, filters_efir, filters_studia):
+                                    if file.file_exist_check(destination, filters_peregony, filters_efir,
+                                                             filters_studia):
                                         if file.file_stopped_check(i[0], j):
+                                            logger.debug('Корирование файла '+j+' остановлено')
                                             full_path = os.path.join(file.rec_name_folder(destination, filters_peregony,
                                                                                           filters_efir, filters_studia),
                                                                      file.rec_month_folder(), file.rec_date_folder())
+                                            global autocopy_stop
+                                            if autocopy_stop:
+                                                break
+
                                             if not os.path.isdir(full_path):
                                                 os.makedirs(full_path)
-                                            copy_status = 'in_progress'
-                                            copy_thread = threading.Thread(None, copy_monitor, args=(file.name,
-                                                                                            copy_status), daemon=False)
-                                            copy_thread.start()
 
-                                            copy_status = file.copy(full_path, source)  # Вызываем копирование
+                                            if not check_thread_is_running(file.name):
+                                                copy_status = 'in_progress'
+                                                copy_thread = threading.Thread(None, copy_monitor,
+                                                                               args=(file.name, copy_status), daemon=False)
 
-                                            if copy_status == 'aborted':
-                                                # При отмене копирования добавляем в black_list
-                                                abortion_time = str(datetime.datetime.now())
-                                                abortion_time = abortion_time.partition('.')[0]
-                                                black_list[abortion_time] = j
+                                                copy_thread.name = file.name
+                                                copy_thread.start()
 
-                                            copy_thread_result = threading.Thread(None, copy_monitor,
-                                                                        args=(file.name, copy_status), daemon=False)
-                                            copy_thread_result.start()
+                                                copy_status = file.copy(full_path, source)  # Вызываем копирование
 
-        except BaseException as error:
+                                                if copy_status == 'aborted':
+                                                    # При отмене копирования добавляем в black_list
+                                                    abortion_time = str(datetime.datetime.now())
+                                                    abortion_time = abortion_time.partition('.')[0]
+                                                    black_list[abortion_time] = j
+
+                                                copy_thread_result = threading.Thread(None, copy_monitor,
+                                                                                      args=(file.name, copy_status),
+                                                                                      daemon=False)
+                                                copy_thread_result.start()
+
+        except FileExistsError:
             full_traceback = traceback.format_exc()
             logger.error(full_traceback)
         global autocopy_running
-        global autocopy_stop
-        time.sleep(2)
         if autocopy_stop:
             break
+        time.sleep(2)
 
 
 def run_free_space_switcher():
@@ -549,8 +540,9 @@ def free_space_on():
     if free_space_running:
         status = free_space_tracing(sources, space_limit)
         if status == 'alarm':
-            messagebox.showwarning(parent=gui, title='Свободное место на BRIO', message="На диске BRIO осталось меньше " +
-                                                                            str(space_limit) + ' Гб, пора запустить очистку')
+            messagebox.showwarning(parent=gui, title='Свободное место на BRIO',
+                                   message="На диске BRIO осталось меньше " + str(space_limit) +
+                                           ' Гб, пора запустить очистку')
 
         gui.after(2000, lambda: free_space_on())
 
@@ -582,9 +574,13 @@ def copy_monitor(filename, status):
     autocopy_messages.set(autocopy_files_list)
 
 
-
-
-# Фрейм профиль
+def check_thread_is_running(file_name):
+    for thread in threading.enumerate():
+        print(thread.name)
+        if thread.name == file_name:
+            return True
+        else:
+            return False
 
 
 profile_frame_name = LabelFrame(profile)
@@ -664,7 +660,8 @@ free_space_messages = StringVar()
 free_space_messages.set('Здесь отображаются действия с файлами')
 
 free_space_messages_label = Label(free_space)
-free_space_messages_label.configure(textvariable=free_space_messages, width=50, height=13, bg='lightgrey', wraplength=330)
+free_space_messages_label.configure(textvariable=free_space_messages, width=50, height=13, bg='lightgrey',
+                                    wraplength=330)
 free_space_messages_label.pack(sid='left', padx=19)
 
 gui.mainloop()
