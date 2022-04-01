@@ -272,7 +272,8 @@ class Files:
         try:
             full_path = os.path.join(self.rec_name_folder(destination, filters_peregony, filters_efir, filters_studia),
                                      rec_month_folder(), rec_date_folder())
-        except:
+        except FileExistsError as error:
+            logger.debug(error)
             full_path = None
         if full_path:
             if os.path.isfile(os.path.join(full_path, self.name)):
