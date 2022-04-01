@@ -1,4 +1,7 @@
 # BRIO assistant
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ec48554865ad4694962ceb132862b5d0)](https://app.codacy.com/gh/geekk0/BRIO_assistant?utm_source=github.com&utm_medium=referral&utm_content=geekk0/BRIO_assistant&utm_campaign=Badge_Grade_Settings)
+
 ![python version](https://img.shields.io/badge/python-3.8-brightgreen)
 ![downloads](https://img.shields.io/github/downloads/geekk0/BRIO_assistant/total)
 ![languages](https://img.shields.io/github/languages/top/geekk0/BRIO_Assistant)
