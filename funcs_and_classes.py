@@ -7,7 +7,6 @@ import time
 import locale
 import calendar
 import ast
-import threading
 
 import psutil as psutil
 import pythoncom
@@ -105,10 +104,10 @@ def file_stopped_check(folder, name):
         size_first = os.path.getsize(os.path.join(folder, name))
         time.sleep(FILE_STOPPED_CHECK_INT)
         size_second = os.path.getsize(os.path.join(folder, name))
-    except:
+    except Exception as e:
+        logger.debug(e)
         size_first = None
         size_second = None
-        pass
 
     if size_first == size_second:
         file_stopped = True
@@ -291,11 +290,11 @@ class Files:
             shell_src = os.path.join(os.path.abspath(source), self.name)
             src = shell.SHCreateItemFromParsingName(shell_src, None, shell.IID_IShellItem)
 
-
-
             pfo.CopyItem(src, dst, 'Файл копируется.....' + self.name)  # Schedule an operation to be performed
             success = pfo.PerformOperations()
+            print(type(success))
             aborted = pfo.GetAnyOperationsAborted()
+            print(type(aborted))
             os.rename(os.path.join(full_path, 'Файл копируется.....' + self.name), os.path.join(full_path, self.name))
 
             return 'complete'

@@ -1,7 +1,8 @@
 import os
+import threading
+
 from tkinter import *
 from tkinter import messagebox
-
 from funcs_and_classes import *
 
 
