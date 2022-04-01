@@ -12,7 +12,7 @@ ___
 Также имеется блок управления профилями, позволяющий каждому пользователю сохранять персональные настройки.
 <br>Логирование событий и ошибок  производится в папку _log_.
 <p align="center"> 
-<img src="C:\Users\Gekk0\PycharmProjects\360\BRIO_assistant\BRIO_assistant.png" style="width:75%" align="center"/>
+<img src="images/BRIO_assistant.png" style="width:75%" align="center" alt="Интерфейс"/>
 </p>
 
 ##Использование
