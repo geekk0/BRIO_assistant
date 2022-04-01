@@ -1,7 +1,12 @@
-<h1 align="center">
- BRIO assistant
-</h1>
-Программа с графическим интерфейсом для автоматизации операций с файлами
+## BRIO assistant
+![](https://img.shields.io/badge/python-3.8-brightgreen)
+![ewfe](https://img.shields.io/github/downloads/geekk0/BRIO_assistant/total)
+![](https://img.shields.io/github/languages/top/geekk0/BRIO_Assistant)
+![](https://img.shields.io/github/commit-activity/y/geekk0/BRIO_Assistant)
+![](https://img.shields.io/github/last-commit/geekk0/BRIO_Assistant)
+<br>Программа с графическим интерфейсом для автоматизации операций с файлами
+
+
 
 ## Описание
 Эта программа разработана для автоматизации работы с файлами сервера записи видео на windows (может 
