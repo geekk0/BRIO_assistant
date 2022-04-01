@@ -159,15 +159,15 @@ def load_profile():
         except ValueError:
             autocopy_delta_time = autocopy_delta_time
         try:
-            filters_peregony = eval(config['AUTOCOPY']['filters_peregony'])
+            filters_peregony = ast.literal_eval(config['AUTOCOPY']['filters_peregony'])
         except ValueError:
             filters_peregony = filters_peregony
         try:
-            filters_efir = eval(config['AUTOCOPY']['filters_efir'])
+            filters_efir = ast.literal_eval(config['AUTOCOPY']['filters_efir'])
         except ValueError:
             filters_efir = filters_efir
         try:
-            filters_studia = eval(config['AUTOCOPY']['filters_studia'])
+            filters_studia = ast.literal_eval(config['AUTOCOPY']['filters_studia'])
         except ValueError:
             filters_studia = filters_efir
         try:
