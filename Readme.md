@@ -1,16 +1,16 @@
-## BRIO assistant
-![](https://img.shields.io/badge/python-3.8-brightgreen)
-![ewfe](https://img.shields.io/github/downloads/geekk0/BRIO_assistant/total)
-![](https://img.shields.io/github/languages/top/geekk0/BRIO_Assistant)
-![](https://img.shields.io/github/commit-activity/y/geekk0/BRIO_Assistant)
-![](https://img.shields.io/github/last-commit/geekk0/BRIO_Assistant)
+# BRIO assistant
+![python version](https://img.shields.io/badge/python-3.8-brightgreen)
+![downloads](https://img.shields.io/github/downloads/geekk0/BRIO_assistant/total)
+![languages](https://img.shields.io/github/languages/top/geekk0/BRIO_Assistant)
+![commit-activity](https://img.shields.io/github/commit-activity/y/geekk0/BRIO_Assistant)
+![last-commit](https://img.shields.io/github/last-commit/geekk0/BRIO_Assistant)
 <br>Программа с графическим интерфейсом для автоматизации операций с файлами
 
 ## Описание
-Эта программа разработана для автоматизации работы с файлами сервера записи видео на windows (может 
-использоваться для работы с разными типами файлов). Разработка велась под конкретные условия, из-за чего названия папок-источников (BRIO) и структура целевых папок (ORIGINAL) фиксированы. Программа выполняет две функции:    
-- Автоматическое копирование файлов в целевые папки и размещение по датам, используя созданные правила и фильтры. 
-- Отслеживает свободное место на диске и уведомляет о достижении указанного минимального значения. Позволяет запустить настраиваемую очистку диска. 
+
+Эта программа разработана для автоматизации работы с файлами сервера записи видео на windows (может использоваться для работы с разными типами файлов). Разработка велась под конкретные условия, из-за чего названия папок-источников (BRIO) и структура целевых папок (ORIGINAL) фиксированы. Программа выполняет две функции:    
+-  Автоматическое копирование файлов в целевые папки и размещение по датам, используя созданные правила и фильтры. 
+-  Отслеживает свободное место на диске и уведомляет о достижении указанного минимального значения. Позволяет запустить настраиваемую очистку диска. 
 
 Также имеется блок управления профилями, позволяющий каждому пользователю сохранять персональные настройки.
 <br>Логирование событий и ошибок производится в папку log.
