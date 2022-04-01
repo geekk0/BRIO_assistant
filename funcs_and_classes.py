@@ -9,6 +9,7 @@ import traceback
 import pytz
 import locale
 import calendar
+import ast
 
 import psutil as psutil
 import pythoncom
@@ -40,17 +41,17 @@ config.read(os.path.join(os.getcwd(), "config.ini"))
 config.sections()
 
 
-RAW_SOURCE_LIST = eval(config["PATHS"]["Disk_BRIO"])
-RAW_ORIGINAL_LIST = eval(config["PATHS"]["Disk_ORIGINAL"])
+RAW_SOURCE_LIST = ast.literal_eval(config["PATHS"]["Disk_BRIO"])
+RAW_ORIGINAL_LIST = ast.literal_eval(config["PATHS"]["Disk_ORIGINAL"])
 SUFFIX = config["PATHS"]["Suffix"]
 
-DELTA_CHECK_INT = eval(config["COPY"]["DELTA_CHECK_INT"])
-PAUSE_TIME_INT = eval(config["COPY"]["PAUSE_TIME_INT"])
-BLACK_LIST_DELTA_INT = eval(config["COPY"]["BLACK_LIST_DELTA_INT"])
-PEREGONY = eval(config["COPY"]["PEREGONY"])
-NOVOSTI = eval(config["COPY"]["NOVOSTI"])
-STUDIA = eval(config["COPY"]["STUDIA"])
-FILE_STOPPED_CHECK_INT = eval(config["COPY"]["FILE_STOPPED_CHECK_INT"])
+DELTA_CHECK_INT = ast.parse(config["COPY"]["DELTA_CHECK_INT"])
+PAUSE_TIME_INT = ast.parse(config["COPY"]["PAUSE_TIME_INT"])
+BLACK_LIST_DELTA_INT = ast.parse(config["COPY"]["BLACK_LIST_DELTA_INT"])
+PEREGONY = ast.literal_eval(config["COPY"]["PEREGONY"])
+NOVOSTI = ast.literal_eval(config["COPY"]["NOVOSTI"])
+STUDIA = ast.literal_eval(config["COPY"]["STUDIA"])
+FILE_STOPPED_CHECK_INT = ast.parse(config["COPY"]["FILE_STOPPED_CHECK_INT"])
 
 q = queue.Queue()
 
