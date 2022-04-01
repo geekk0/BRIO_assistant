@@ -1,5 +1,0 @@
-2022-04-01 14:45:05 ERROR    (-2144927744, 'OLE error 0x80270000', None, None)
-2022-04-01 14:47:08 ERROR    (-2144927744, 'OLE error 0x80270000', None, None)
-2022-04-01 14:54:38 ERROR    (-2144927744, 'OLE error 0x80270000', None, None)
-2022-04-01 14:55:33 ERROR    [WinError 183] Невозможно создать файл, так как он уже существует: 'C:\\Users\\Gekk0\\PycharmProjects\\360\\BRIO_assistant\\ORIGINAL\\ИСХОДНИКИ ПЕРЕГОНЫ\\АПРЕЛЬ\\01\\Файл копируется.....рюкзак_8.iso' -> 'C:\\Users\\Gekk0\\PycharmProjects\\360\\BRIO_assistant\\ORIGINAL\\ИСХОДНИКИ ПЕРЕГОНЫ\\АПРЕЛЬ\\01\\рюкзак_8.iso'
-2022-04-01 15:02:52 ERROR    (-2144927744, 'OLE error 0x80270000', None, None)
