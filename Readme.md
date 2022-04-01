@@ -29,4 +29,4 @@
 
 ## Используемые библиотеки
 tkinter
-<br>configparser, logging, queue, threading, locale, psutil, pythoncom, win32com.shell.
+<br>psutil, configparser, logging, queue, threading, locale, psutil, pythoncom, win32com.shell.
