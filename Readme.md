@@ -2,7 +2,7 @@
 ![python version](https://img.shields.io/badge/python-3.8-brightgreen)
 ![downloads](https://img.shields.io/github/downloads/geekk0/BRIO_assistant/total)
 ![languages](https://img.shields.io/github/languages/top/geekk0/BRIO_Assistant)
-![commit-activity](https://img.shields.io/github/commit-activity/y/geekk0/BRIO_Assistant)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/3cc6c94a88dd41be9b84faf38e378752)](https://www.codacy.com/gh/geekk0/BRIO_assistant/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=geekk0/BRIO_assistant&amp;utm_campaign=Badge_Grade)![commit-activity](https://img.shields.io/github/commit-activity/y/geekk0/BRIO_Assistant)
 ![last-commit](https://img.shields.io/github/last-commit/geekk0/BRIO_Assistant)
 <br>Программа с графическим интерфейсом для автоматизации операций с файлами
 
