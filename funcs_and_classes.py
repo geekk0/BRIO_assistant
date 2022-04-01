@@ -24,11 +24,11 @@ logger.setLevel(logging.DEBUG)
 
 cute_format = logging.Formatter(fmt='%(asctime)s %(levelname)-8s %(message)s', datefmt='%Y-%m-%d %H:%M:%S' )
 
-debug_log = logging.FileHandler(os.path.join(current_path, 'debug.log'))     # to log debug messages
+debug_log = logging.FileHandler(os.path.join(current_path, 'logs/debug.log'))     # to log debug messages
 debug_log.setLevel(logging.DEBUG)
 debug_log.setFormatter(cute_format)
 
-error_log = logging.FileHandler(os.path.join(current_path, 'error.log'))     # to log errors messages
+error_log = logging.FileHandler(os.path.join(current_path, 'logs/error.log'))     # to log errors messages
 error_log.setLevel(logging.ERROR)
 error_log.setFormatter(cute_format)
 
@@ -67,19 +67,19 @@ def src_init(raw_dirs_list):  # Находим диски BRIO
             srcs_list.append(s)
             logger.debug("Найдены диски BRIO "+s)
     if not srcs_list:
-        logger.debug("Диски BRIO не найдены")
+        # logger.debug("Диски BRIO не найдены")
         return False
     return srcs_list
 
 
 def dest_init(raw_dirs_list):  # Находим диски ORIGINAL
-
+    dest_path = ''
     for d in raw_dirs_list:
         if os.path.isdir(d):
             dest_path = d
             logger.debug("ORIGINAL на диске "+d)
     if not dest_path:
-        logger.debug("ORIGINAL не найден")
+        # logger.debug("ORIGINAL не найден")
         return False
     return dest_path
 

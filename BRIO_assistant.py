@@ -1,21 +1,21 @@
+import os
 from tkinter import *
 from tkinter import messagebox
 
 from funcs_and_classes import *
 
 
-# Импорт переменных из config.ini
-config = configparser.ConfigParser()
+config = configparser.ConfigParser()                # Импорт переменных из config.ini
 config.read('config.ini')
 users = config['PROFILES']['users']
 users_list = users.split(' ')
 
 space_limit = 72                                    # Задаем значения по умолчанию для свободного места
-autocopy_pause_time_check = 70
+autocopy_pause_time_check = 0
 autocopy_delta_time = 10000
 days_old = 14
 
-black_list_lifetime = BLACK_LIST_DELTA_INT          # Задаем значения по умолчанию для автокопирования
+black_list_lifetime = BLACK_LIST_DELTA_INT          # Задаем значения по умолчанию для автоматического копирования
 filters_peregony = PEREGONY
 filters_efir = NOVOSTI
 filters_studia = STUDIA
@@ -27,12 +27,12 @@ autocopy_stop = False
 ac_command = queue.SimpleQueue()
 autocopy_files_list = ''
 
-sources = src_init(RAW_SOURCE_LIST)                  # Инициализация:
+sources = src_init(RAW_SOURCE_LIST)                  # Определение папок-источников и целевых папок:
 if not sources:
-    alarm = 'Диск BRIO не найден'
+    sources = [os.path.join(os.getcwd(), "BRIO")]
 destination = dest_init(RAW_ORIGINAL_LIST)
 if not destination:
-    alarm += '\nДиск ORIGINAL не найден'
+    destination = os.path.join(os.getcwd(), "ORIGINAL")
 
 gui = Tk()
 gui.title("BRIO assistant")
@@ -479,7 +479,7 @@ def autocopy_starter():
                                     if file.file_exist_check(destination, filters_peregony, filters_efir,
                                                              filters_studia):
                                         if file.file_stopped_check(i[0], j):
-                                            logger.debug('Корирование файла '+j+' остановлено')
+
                                             full_path = os.path.join(file.rec_name_folder(destination, filters_peregony,
                                                                                           filters_efir, filters_studia),
                                                                      file.rec_month_folder(), file.rec_date_folder())
@@ -491,6 +491,9 @@ def autocopy_starter():
                                                 os.makedirs(full_path)
 
                                             if not check_thread_is_running(file.name):
+
+                                                logger.debug("Запущено копирование файла: "+j)
+
                                                 copy_status = 'in_progress'
                                                 copy_thread = threading.Thread(None, copy_monitor,
                                                                                args=(file.name, copy_status), daemon=False)
@@ -506,10 +509,17 @@ def autocopy_starter():
                                                     abortion_time = abortion_time.partition('.')[0]
                                                     black_list[abortion_time] = j
 
+                                                    logger.debug('Копирование файла ' + j + ' отменено')
+
+                                                elif copy_status == "complete":
+
+                                                    logger.debug('Файл ' + j + ' скопирован')
+
                                                 copy_thread_result = threading.Thread(None, copy_monitor,
                                                                                       args=(file.name, copy_status),
                                                                                       daemon=False)
                                                 copy_thread_result.start()
+
 
         except FileExistsError:
             full_traceback = traceback.format_exc()
@@ -571,12 +581,12 @@ def copy_monitor(filename, status):
     elif 'complete' in status:
         autocopy_files_list += '\nФайл ' + filename+' скопирован'
 
+
     autocopy_messages.set(autocopy_files_list)
 
 
 def check_thread_is_running(file_name):
     for thread in threading.enumerate():
-        print(thread.name)
         if thread.name == file_name:
             return True
         else:
@@ -621,7 +631,7 @@ autocopy_run_button.configure(text='Запустить', width=20, bg='lightgrey
 autocopy.pack_propagate(0)
 autocopy_run_button.pack(sid='left', padx=40)
 
-autocopy_settings_btn = PhotoImage(file='settings_new.png')
+autocopy_settings_btn = PhotoImage(file='images/settings_new.png')
 img_label = Label(image=autocopy_settings_btn)
 dummy_button = Button(autocopy, image=autocopy_settings_btn, command=open_autocopy_settings, borderwidth=0, bg='grey',
                       activebackground='grey')
@@ -650,7 +660,7 @@ free_space_run_button.configure(text='Запустить', width=14, bg='lightgr
 free_space.pack_propagate(0)
 free_space_run_button.pack(sid='left', padx=0)
 
-free_space_settings_btn = PhotoImage(file='settings_new.png')
+free_space_settings_btn = PhotoImage(file='images/settings_new.png')
 free_space_img_label = Label(image=free_space_settings_btn)
 free_space_dummy_button = Button(free_space, image=free_space_settings_btn, command=open_free_space_settings,
                                  borderwidth=0, bg='grey', activebackground='grey')
