@@ -114,9 +114,9 @@ def file_stopped_check(folder, name):
         return True
 
 
-def first_del_list(days_old):   # Первоначальный список на удаление (по дате создания)
+def first_del_list(days_old, sources):   # Первоначальный список на удаление (по дате создания)
 
-    srcs_list = src_init(RAW_SOURCE_LIST)
+    srcs_list = src_init(sources)
 
     first_delete_list = []
 

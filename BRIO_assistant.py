@@ -35,6 +35,7 @@ destination = dest_init(RAW_ORIGINAL_LIST)
 if not destination:
     destination = os.path.join(os.getcwd(), "ORIGINAL")
 
+
 gui = Tk()
 gui.title("BRIO assistant")
 gui.geometry('800x760+350+20')
@@ -226,15 +227,15 @@ def open_autocopy_settings():
     set_filters_peregony_label.pack(sid='top', padx=0, pady=20)
 
     btn_filters_peregony = Button(autocopy_settings_window, height=1, width=15, text="ПЕРЕГОНЫ",
-                                  command=show_filters_peregony())
+                                  command=lambda:show_filters_peregony())
     btn_filters_peregony.pack(sid='top', pady=0, padx=0)
 
     btn_filters_efir = Button(autocopy_settings_window, height=1, width=15, text="ЗАПИСЬ ЭФИРА",
-                              command=show_filters_efir())
+                              command=lambda:show_filters_efir())
     btn_filters_efir.pack(sid='top', pady=10, padx=30)
 
     btn_filters_studia = Button(autocopy_settings_window, height=1, width=15, text="ЗАПИСЬ СТУДИЙ",
-                                command=show_filters_studia())
+                                command=lambda:show_filters_studia())
     btn_filters_studia.pack(sid='top', pady=0, padx=60)
 
     def set_autocopy_settings(time_value, local_delta_time, local_black_list_time):
@@ -554,14 +555,14 @@ def free_space_on():
                                    message="На диске BRIO осталось меньше " + str(space_limit) +
                                            ' Гб, пора запустить очистку')
 
-        gui.after(2000, free_space_on())
+        gui.after(2000, lambda: free_space_on())
 
 
 def clean_space():
     if alarm:
         free_space_messages.set(alarm)
     else:
-        first_delete_list = first_del_list(int(days_old))
+        first_delete_list = first_del_list(int(days_old), sources)
         output = ''
         free_space_messages.set(output)
         final_list = exist_check(first_delete_list, destination)
