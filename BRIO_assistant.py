@@ -227,37 +227,16 @@ def open_autocopy_settings():
     set_filters_peregony_label.pack(sid='top', padx=0, pady=20)
 
     btn_filters_peregony = Button(autocopy_settings_window, height=1, width=15, text="ПЕРЕГОНЫ",
-                                  command=lambda:show_filters_peregony())
+                                  command=lambda: show_filters_peregony())
     btn_filters_peregony.pack(sid='top', pady=0, padx=0)
 
     btn_filters_efir = Button(autocopy_settings_window, height=1, width=15, text="ЗАПИСЬ ЭФИРА",
-                              command=lambda:show_filters_efir())
+                              command=lambda: show_filters_efir())
     btn_filters_efir.pack(sid='top', pady=10, padx=30)
 
     btn_filters_studia = Button(autocopy_settings_window, height=1, width=15, text="ЗАПИСЬ СТУДИЙ",
-                                command=lambda:show_filters_studia())
+                                command=lambda: show_filters_studia())
     btn_filters_studia.pack(sid='top', pady=0, padx=60)
-
-    def set_autocopy_settings(time_value, local_delta_time, local_black_list_time):
-        global autocopy_pause_time_check
-        global autocopy_delta_time
-        global black_list_lifetime
-
-        time_check_setting.delete(0, "end")
-        time_check_setting.insert(0, time_value)
-        check_time.set(time_value)
-
-        delta_time_setting.delete(0, "end")
-        delta_time_setting.insert(0, delta_time)
-
-        black_list_time_setting.delete(0, "end")
-        black_list_time_setting.insert(0, local_black_list_time)
-
-        autocopy_pause_time_check = time_value
-        autocopy_delta_time = local_delta_time*60*60
-        black_list_lifetime = local_black_list_time*60*60
-
-        autocopy_settings_window.destroy()
 
     def show_filters_peregony():
         global active_user
@@ -304,6 +283,51 @@ def open_autocopy_settings():
             filters_peregony.remove(filters_peregony_list.get(selected_item))
             filters_peregony_list.delete(selected_item)
 
+    def show_filters_studia():
+        global active_user
+        global filters_studia
+
+        new_filter_studia = StringVar()
+
+        filters_studia_window = Toplevel(autocopy_settings_window)
+        filters_studia_window.title('Фильтры для записи студий')
+        filters_studia_window.geometry('550x300+475+250')
+        filters_studia_window.resizable(width=FALSE, height=FALSE)
+        filters_studia_window.configure(bg='darkgrey')
+        filters_studia_window.focus()
+
+        filters_studia_list = Listbox(filters_studia_window, width=50, height=40)
+        filters_studia_list.pack(sid='left', padx=20, pady=30)
+
+        config.read(os.path.join('profiles', active_user + '.ini'))
+
+        set_new_filter_studia_label = Label(filters_studia_window,
+                                            text='Введите новый фильтр:')  # Delta
+        set_new_filter_studia_label.pack(sid='top', padx=10, pady=20)
+
+        new_filter_studia_entry = Entry(filters_studia_window, textvariable=new_filter_studia)
+        new_filter_studia_entry.pack(sid='top', padx=0)
+
+        add_filter_studia_btn = Button(filters_studia_window, text="Добавить",
+                                       command=lambda: add_filter_studia(new_filter_studia.get()))
+        add_filter_studia_btn.pack(sid="top", pady=5)
+
+        delete_filter_studia_btn = Button(filters_studia_window, text="Удалить выбранный фильтр",
+                                          command=lambda: delete_filter_studia((filters_studia_list.curselection())))
+        delete_filter_studia_btn.pack(sid='top', pady=10)
+
+        for single_filter in filters_studia:
+            filters_studia_list.insert(END, single_filter)
+
+        def add_filter_studia(local_new_filter_studia):
+            global filters_studia
+            filters_studia_list.insert(END, local_new_filter_studia)
+            filters_studia.append(local_new_filter_studia)
+
+        def delete_filter_studia(selected_item):
+            filters_studia.remove(filters_studia_list.get(selected_item))
+            filters_studia_list.delete(selected_item)
+
     def show_filters_efir():
         global active_user
         global filters_efir
@@ -349,50 +373,26 @@ def open_autocopy_settings():
             filters_efir.remove(filters_efir_list.get(selected_item))
             filters_efir_list.delete(selected_item)
 
-    def show_filters_studia():
-        global active_user
-        global filters_studia
+    def set_autocopy_settings(time_value, local_delta_time, local_black_list_time):
+        global autocopy_pause_time_check
+        global autocopy_delta_time
+        global black_list_lifetime
 
-        new_filter_studia = StringVar()
+        time_check_setting.delete(0, "end")
+        time_check_setting.insert(0, time_value)
+        check_time.set(time_value)
 
-        filters_studia_window = Toplevel(autocopy_settings_window)
-        filters_studia_window.title('Фильтры для записи студий')
-        filters_studia_window.geometry('550x300+475+250')
-        filters_studia_window.resizable(width=FALSE, height=FALSE)
-        filters_studia_window.configure(bg='darkgrey')
-        filters_studia_window.focus()
+        delta_time_setting.delete(0, "end")
+        delta_time_setting.insert(0, delta_time)
 
-        filters_studia_list = Listbox(filters_studia_window, width=50, height=40)
-        filters_studia_list.pack(sid='left', padx=20, pady=30)
+        black_list_time_setting.delete(0, "end")
+        black_list_time_setting.insert(0, local_black_list_time)
 
-        config.read(os.path.join('profiles', active_user + '.ini'))
+        autocopy_pause_time_check = time_value
+        autocopy_delta_time = local_delta_time*60*60
+        black_list_lifetime = local_black_list_time*60*60
 
-        set_new_filter_studia_label = Label(filters_studia_window,
-                                            text='Введите новый фильтр:')  # Delta
-        set_new_filter_studia_label.pack(sid='top', padx=10, pady=20)
-
-        new_filter_studia_entry = Entry(filters_studia_window, textvariable=new_filter_studia)
-        new_filter_studia_entry.pack(sid='top', padx=0)
-
-        add_filter_studia_btn = Button(filters_studia_window, text="Добавить",
-                                       command=lambda: add_filter_studia(new_filter_studia.get()))
-        add_filter_studia_btn.pack(sid="top", pady=5)
-
-        delete_filter_studia_btn = Button(filters_studia_window, text="Удалить выбранный фильтр",
-                                          command=lambda: delete_filter_studia((filters_studia_list.curselection())))
-        delete_filter_studia_btn.pack(sid='top', pady=10)
-
-        for single_filter in filters_studia:
-            filters_studia_list.insert(END, single_filter)
-
-        def add_filter_studia(local_new_filter_studia):
-            global filters_studia
-            filters_studia_list.insert(END, local_new_filter_studia)
-            filters_studia.append(local_new_filter_studia)
-
-        def delete_filter_studia(selected_item):
-            filters_studia.remove(filters_studia_list.get(selected_item))
-            filters_studia_list.delete(selected_item)
+        autocopy_settings_window.destroy()
 
 
 def open_free_space_settings():
