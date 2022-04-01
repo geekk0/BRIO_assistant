@@ -3,13 +3,11 @@ import datetime
 import logging
 import os
 import queue
-import threading
 import time
-import traceback
-import pytz
 import locale
 import calendar
 import ast
+import threading
 
 import psutil as psutil
 import pythoncom
@@ -40,18 +38,17 @@ config = configparser.ConfigParser()
 config.read(os.path.join(os.getcwd(), "config.ini"))
 config.sections()
 
-
 RAW_SOURCE_LIST = ast.literal_eval(config["PATHS"]["Disk_BRIO"])
 RAW_ORIGINAL_LIST = ast.literal_eval(config["PATHS"]["Disk_ORIGINAL"])
-SUFFIX = config["PATHS"]["Suffix"]
+SUFFIX = config.get("PATHS", "suffix")
+DELTA_CHECK_INT = config.getint(section="COPY", option="delta_check_int")
+PAUSE_TIME_INT = config.getint("COPY", "PAUSE_TIME_INT")
+BLACK_LIST_DELTA_INT = config.getint("COPY", "BLACK_LIST_DELTA_INT")
 
-DELTA_CHECK_INT = ast.parse(config["COPY"]["DELTA_CHECK_INT"])
-PAUSE_TIME_INT = ast.parse(config["COPY"]["PAUSE_TIME_INT"])
-BLACK_LIST_DELTA_INT = ast.parse(config["COPY"]["BLACK_LIST_DELTA_INT"])
 PEREGONY = ast.literal_eval(config["COPY"]["PEREGONY"])
 NOVOSTI = ast.literal_eval(config["COPY"]["NOVOSTI"])
 STUDIA = ast.literal_eval(config["COPY"]["STUDIA"])
-FILE_STOPPED_CHECK_INT = ast.parse(config["COPY"]["FILE_STOPPED_CHECK_INT"])
+FILE_STOPPED_CHECK_INT = config.getint("COPY", "FILE_STOPPED_CHECK_INT")
 
 q = queue.Queue()
 
@@ -85,22 +82,54 @@ def dest_init(raw_dirs_list):  # Находим диски ORIGINAL
     return dest_path
 
 
+def rec_month_folder():
+    try:
+        locale.setlocale(locale.LC_ALL, "")
+
+        month = datetime.datetime.now().strftime("%B").upper()
+        return month
+
+    except Exception as e:
+        print(e)
+
+
+def rec_date_folder():
+    today = datetime.datetime.today()
+    str_folder_date = str(today)
+    return str_folder_date[8] + str_folder_date[9]  # Формируем имя папки под число
+
+
+def file_stopped_check(folder, name):
+    global file_stopped
+    try:
+        size_first = os.path.getsize(os.path.join(folder, name))
+        time.sleep(FILE_STOPPED_CHECK_INT)
+        size_second = os.path.getsize(os.path.join(folder, name))
+    except:
+        size_first = None
+        size_second = None
+        pass
+
+    if size_first == size_second:
+        file_stopped = True
+        return True
+
+
 def first_del_list(days_old):   # Первоначальный список на удаление (по дате создания)
 
     srcs_list = src_init(RAW_SOURCE_LIST)
 
     first_delete_list = []
 
-    for dirs in srcs_list:
+    for directory in srcs_list:
 
-        for i in os.walk(dirs):
+        for i in os.walk(directory):
 
             for j in i[2]:
 
                 if j.endswith(SUFFIX):
                     path = os.path.join(os.path.abspath(i[0]), j)
                     file_create_date = time.ctime(os.path.getctime(path))
-                    print(file_create_date)
                     with calendar.different_locale('C'):
                         converted_file_create_date = datetime.datetime.strptime\
                             (file_create_date, '%a %b %d %H:%M:%S %Y').date()
@@ -123,8 +152,8 @@ def exist_check(first_delete_list, destination):
 
     source_dirs = ['ИСХОДНИКИ ПЕРЕГОНЫ', "ИСХОДНИКИ ЗАПИСЬ ЭФИРА", "ИСХОДНИКИ ЗАПИСИ СТУДИЙ"]
 
-    for dir in source_dirs:
-        source_files_directory = os.path.join(destination, dir)
+    for directory in source_dirs:
+        source_files_directory = os.path.join(destination, directory)
 
         for i in os.walk(source_files_directory):
             for j in i[2]:
@@ -137,9 +166,9 @@ def exist_check(first_delete_list, destination):
 
 def remove(final_list, sources):
 
-    for dir in sources:
+    for directory in sources:
 
-        for i in os.walk(dir):
+        for i in os.walk(directory):
             for j in i[2]:
                 if j in final_list:
 
@@ -239,25 +268,11 @@ class Files:
         if not match:
             return False
 
-    def rec_month_folder(self):
-
-        try:
-            locale.setlocale(locale.LC_ALL, "")
-
-            month = datetime.datetime.now().strftime("%B").upper()
-            return month
-
-        except Exception as e:
-            print(e)
-
-    def rec_date_folder(self):
-        today = datetime.datetime.today()
-        str_folder_date = str(today)
-        return str_folder_date[8] + str_folder_date[9]  # Формируем имя папки под число
-
     def file_exist_check(self, destination, filters_peregony, filters_efir, filters_studia):
+
         try:
-            full_path = os.path.join(self.rec_name_folder(destination, filters_peregony, filters_efir, filters_studia ), self.rec_month_folder(), self.rec_date_folder())
+            full_path = os.path.join(self.rec_name_folder(destination, filters_peregony, filters_efir, filters_studia),
+                                     rec_month_folder(), rec_date_folder())
         except:
             full_path = None
         if full_path:
@@ -265,22 +280,6 @@ class Files:
                 return False
             else:
                 return True
-
-    def file_stopped_check(self, folder, name):
-        global file_stopped
-        try:
-            size_first = os.path.getsize(os.path.join(folder, name))
-            time.sleep(FILE_STOPPED_CHECK_INT)
-            size_second = os.path.getsize(os.path.join(folder, name))
-        except:
-            size_first = None
-            size_second = None
-            pass
-
-
-        if size_first == size_second:
-            file_stopped = True
-            return True
 
     def copy(self, full_path, source):
         try:
@@ -304,9 +303,6 @@ class Files:
             msg = 'aborted'
             logger.error(error)
             return msg
-
-
-
 
 
 if __name__ == "__main__":

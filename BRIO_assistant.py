@@ -13,7 +13,7 @@ users_list = users.split(' ')
 space_limit = 72                                    # Задаем значения по умолчанию для свободного места
 autocopy_pause_time_check = 0
 autocopy_delta_time = 10000
-days_old = 14
+days_old = 7
 
 black_list_lifetime = BLACK_LIST_DELTA_INT          # Задаем значения по умолчанию для автоматического копирования
 filters_peregony = PEREGONY
@@ -478,11 +478,10 @@ def autocopy_starter():
                                 if file.black_list_check(black_list_lifetime):
                                     if file.file_exist_check(destination, filters_peregony, filters_efir,
                                                              filters_studia):
-                                        if file.file_stopped_check(i[0], j):
-
+                                        if file_stopped_check(i[0], j):
                                             full_path = os.path.join(file.rec_name_folder(destination, filters_peregony,
                                                                                           filters_efir, filters_studia),
-                                                                     file.rec_month_folder(), file.rec_date_folder())
+                                                                     rec_month_folder(), rec_date_folder())
                                             global autocopy_stop
                                             if autocopy_stop:
                                                 break
